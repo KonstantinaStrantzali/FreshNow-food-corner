@@ -9,8 +9,17 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  min-height: 60vh;
+  min-height: 70vh;
   margin-top: 0;
+}
+.navbar{
+    background-color: #BCDDA6;
+    font-size: 25px;
+   
+}
+
+.nav-item{
+    color: white !important ;
 }
 
 .logo{

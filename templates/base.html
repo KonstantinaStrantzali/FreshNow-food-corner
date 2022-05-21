@@ -56,7 +56,7 @@
                 </form>
             </div>
             <div class="col-12 col-lg-4">
-                <ul class="list-inline list-unstyled text-center text-lg-right ms-4">
+                <ul class="list-inline text-center text-lg-right ms-4">
                     <li class="list-inline-item dropdown">
                         <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
@@ -97,12 +97,14 @@
                 </ul>
             </div>
         </div>
+    
         <div class="row">
-            <nav class="navbar navbar-main-lg navbar-expand-lg navbar-light w-100 bg-cream pt-3 pt-lg-2">
-                <button class="navbar-toggler ml-4 border-green" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <nav class="navbar navbar-main-lg navbar-expand-lg w-100 pt-3 pt-lg-2">
+                <button class="navbar-toggler ml-4" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
-                
+                {% include 'includes/mobile-top-header.html' %}
+                {% include 'includes/main-nav.html' %}
             </nav>
         </div>
     </header>
@@ -125,14 +127,14 @@
                 <div class="row">
                     <div class="col cream small ml-4">
                         <span>
-                            &copy; Copyright<span id=copyright></span> | La Fraschetta | 
+                            &copy; Copyright<span id=copyright></span> | FreshNow | 
                         </span>
-                        <span class="d-none d-md-inline-block">Developed by: Carla Buongiorno </span>   
-                        <a href="https://github.com/CarlaBuongiorno/la_fraschetta" class="text-decoration-none hvr-grow" target="_blank" rel="noopener">
+                        <span class="d-none d-md-inline-block">Developed by</span>   
+                        <a href="" class="text-decoration-none hvr-grow" target="_blank" rel="noopener">
                             <i class="fab fa-github fa-lg cream ml-1" aria-hidden="true"></i>
                             <span class="sr-only">GitHub</span>
                         </a>
-                        <a href="https://www.linkedin.com/in/carlabuongiorno/" class="text-decoration-none hvr-grow" target="_blank" rel="noopener">
+                        <a href="" class="text-decoration-none hvr-grow" target="_blank" rel="noopener">
                             <i class="fab fa-linkedin fa-lg cream ml-1" aria-hidden="true"></i>
                             <span class="sr-only">linkedin</span>
                         </a>
