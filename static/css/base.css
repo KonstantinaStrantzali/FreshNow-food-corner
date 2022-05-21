@@ -1,26 +1,32 @@
 html {
     height: 100%;
-    color:black;
-}
-.img{
-    font-size: 10px;
+    scroll-behavior: smooth;
 }
 
-body {
-   
+.hero-container {
+	background: url('/media/background-image.avif') no-repeat center center fixed;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 60vh;
+  margin-top: 0;
 }
 
+.logo{
+    margin-top: -20px;
+    margin-bottom: -30px;
+    width: 25%;
+    height: auto;
+    
+}
 
 
 /* from Bulma */
-
 .icon {
     align-items: center;
     display: inline-flex;
     justify-content: center;
     height: 1.5rem;
     width: 1.5rem;
-}
-.logo-font {
-    text-transform: uppercase;
 }

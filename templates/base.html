@@ -14,19 +14,20 @@
     {% endblock %}
 
     {% block corecss %}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">    {% endblock %}
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% endblock %}
+
     {% block extra_css %}
     {% endblock %}
 
     {% block corejs %}
-    
         <script src="https://kit.fontawesome.com/76781f2be6.js" crossorigin="anonymous"></script>        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-        {% endblock %}
+    {% endblock %}
 
     {% block extra_js %}
     {% endblock %}
@@ -34,17 +35,18 @@
     <title>FreshNow {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-    <header class="container-fluid fixed-top p-0">
-        <div id="topnav" class="row pt-lg-2 d-none d-lg-flex">
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+    <header class="container-fluid fixed-top">
+        <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+            <div class="col-12 col-lg-4 py-1 py-lg-0 text-lg-left">
                 <img class="logo" src="{{ MEDIA_URL }}logo.png" alt="">
+                   
             </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <form method="GET" action="" class="ml-lg-3">
-                    <div class="input-group w-75">
-                        <input class="form-control border-green bg-cream green site-search" type="text" name="q" placeholder="Search your meal">
+            <div class="col-12 col-lg-4 mt-2 py-lg-0">
+                <form method="GET" action="">
+                    <div class="input-group w-100">
+                        <input class="form-control" type="text" name="q" placeholder="Search our site">
                         <div class="input-group-append">
-                            <button class="form-control btn btn-green border-green" type="submit">
+                            <button class="form-control" type="submit">
                                 <span class="icon">
                                     <i class="fas fa-search"></i>
                                 </span>
@@ -53,14 +55,13 @@
                     </div>
                 </form>
             </div>
-            
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 pl-lg-0">
-                <ul class="list-inline list-unstyled text-right mr-lg-3 my-0">
+            <div class="col-12 col-lg-4">
+                <ul class="list-inline list-unstyled text-center text-lg-right ms-4">
                     <li class="list-inline-item dropdown">
-                        <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
-                                <div><i class="fas fa-user fa-lg green"></i></div>
-                                <p class="my-0 green">My Account</p>
+                                <div><i class="fas fa-user fa-lg"></i></div>
+                                <p class="text-right my-0">My Account</p>
                             </div>
                         </a>
                         <div class="dropdown-menu border-0 bg-cream" aria-labelledby="user-options">
@@ -83,7 +84,7 @@
                                 <div>
                                     <i class="fas fa-shopping-basket fa-lg green"></i>
                                 </div>
-                                <p class="my-0 green">
+                                <p class="text-right my-0">
                                     {% if grand_total %}
                                         €{{ grand_total|floatformat:2 }}
                                     {% else %}
@@ -116,9 +117,44 @@
     {% block content %}
     {% endblock %}
 
-    {% block postloadjs %}
-    {% endblock %}
 
+    <footer class="container-fluid pt-2">  
+        <!-- Copyright -->
+        <div class="row bg-green pb-2 pb-lg-3 mt-0 pt-1 pt-lg-2 text-center text-lg-left">
+            <div class="col cream">
+                <div class="row">
+                    <div class="col cream small ml-4">
+                        <span>
+                            &copy; Copyright<span id=copyright></span> | La Fraschetta | 
+                        </span>
+                        <span class="d-none d-md-inline-block">Developed by: Carla Buongiorno </span>   
+                        <a href="https://github.com/CarlaBuongiorno/la_fraschetta" class="text-decoration-none hvr-grow" target="_blank" rel="noopener">
+                            <i class="fab fa-github fa-lg cream ml-1" aria-hidden="true"></i>
+                            <span class="sr-only">GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/carlabuongiorno/" class="text-decoration-none hvr-grow" target="_blank" rel="noopener">
+                            <i class="fab fa-linkedin fa-lg cream ml-1" aria-hidden="true"></i>
+                            <span class="sr-only">linkedin</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    {% block postloadjs %}
+    <script>
+        $('.toast').toast('show');
+    </script>
+    <script>
+        function copyright() {
+            let date = new Date();
+            let year = date.getFullYear();
+            document.getElementById("copyright").innerHTML = year;
+        }
+        copyright();
+    </script>
+    {% endblock %}
     
   </body>
 </html>
