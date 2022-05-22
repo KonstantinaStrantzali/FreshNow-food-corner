@@ -1,28 +1,28 @@
-<div class="collapse navbar-collapse" id="main-nav">
-    <ul class="navbar-nav mx-auto ">
+<div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link text-dark  mr-lg-5" href="" id="home-link">
+            <a class="nav-link text-black  ml-4 mr-lg-5" href="" id="home-link">
                 Home
             </a>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link text-dark mr-lg-5" href="#" id="meals-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link ml-4 mr-lg-5" href="#" id="meals-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Meals
             </a>
-            <div class="dropdown-menu" aria-labelledby="meals-link">
-                <a href="" class="dropdown-item ml-4 ml-lg-0">All Meals</a>
+            <div class="dropdown-menu bg-cream" aria-labelledby="allmeal-link">
+                <a href="" class="dropdown-item ml-4 ml-lg-0 green site-font">All Meals</a>
                 {% for cat in category_list %}
                     <a href="" class="dropdown-item ml-4 ml-lg-0 green site-font"></a>
                 {% endfor %}
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-dark ml-4 mr-lg-5" href="" id="our-story-link">
+            <a class="nav-link ml-4 mr-lg-5" href="" id="aboutUs-link">
                 About Us
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-dark ml-4 mr-lg-5" href="" id="contact-link">
+            <a class="nav-link ml-4 mr-lg-5" href="" id="contact-link">
                 Contact
             </a>
         </li>
