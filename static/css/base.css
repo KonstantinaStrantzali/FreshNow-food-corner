@@ -15,12 +15,14 @@ html {
 .navbar{
     background-color: #BCDDA6;
     font-size: 20px;
+    align-items: center;
    
 }
 
-.nav-item{
-    color: white !important ;
-}
+#nav ul {
+    display: inline-block;
+    list-style-type: none;
+    }
 
 .logo{
     margin-top: -20px;
@@ -38,4 +40,13 @@ html {
     justify-content: center;
     height: 1.5rem;
     width: 1.5rem;
+}
+
+@media (min-width: 1281px) {
+    
+    .hero-heading,
+    .header-container {
+        margin-top: 8rem;
+        
+    }
 }

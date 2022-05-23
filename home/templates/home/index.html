@@ -5,18 +5,27 @@
     Home
 {% endblock %}
 
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %} 
 
 {% block content %}
     <!-- Hero Section -->
-    <section class="container-fluid">
+    <section class="container-fluid px-0">
         <div class="hero-container img-fluid">
             <div class="row h-100 mx-0">
-                <div class="col text-center">
-                    
+                <div class="col text-center text-lg-right mt-5">
+                    <h1 class="hero-heading text-center">The taste of <span class="cream">Fresh</span> on your table!</h1>
                 </div>
+                <div class="text-center">
                 <h2>
-                    <a href="" class="shop-now-btn btn btn-lg btn-green py-1">Shop Now</a>
+                    <a href="{% url 'products' %}" class="shop-now-btn btn btn-lg btn-green mt-5">Order Now</a>
                 </h2>
+                </div>
             </div>
         </div>
     </section>
