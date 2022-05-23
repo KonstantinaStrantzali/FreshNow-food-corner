@@ -18,7 +18,10 @@ html {
     align-items: center;
    
 }
-
+.category-image{
+    height: 60%;
+    width: 50%;
+}
 #nav ul {
     display: inline-block;
     list-style-type: none;
