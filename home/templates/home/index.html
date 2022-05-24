@@ -40,15 +40,15 @@
             {% for c in category_list %}
                 <div class="categories col-12 col-md-5 text-center pb-3 mb-3">
                     {% if c.image %}
-                        <a href="{% url 'products' %}?category={{ c.backend_name }}">
-                            <img class="category-image" src="{{ c.image.url }}" alt="{{ c.friendly_name }}" class="img-responsive" height="140">
+                        <a href="{% url 'products' %}?category={{ c.name }}">
+                            <img class="category-image" src="{{ c.image.url }}" alt="{{ c.name }}" class="img-responsive" height="140">
                             <h5 class="pt-3 mb-0 pb-0 green">
                                 {{ c.friendly_name }}
                             </h5>
                         </a>
                     {% else %}
-                        <a href="{% url 'products' %}?category={{ c.backend_name }}">
-                            <img src="{{ MEDIA_URL }}noimage.png" alt="{{ c.friendly_name }}" class="img-responsive" height="130">
+                        <a href="{% url 'products' %}?category={{ c.name }}">
+                            <img src="{{ MEDIA_URL }}noimage.png" alt="{{ c.name }}" class="img-responsive" height="130">
                             <h5 class="pt-3 mb-0 pb-0 green">
                                 {{ c.friendly_name }}
                             </h5>
