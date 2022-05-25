@@ -7,7 +7,7 @@ class Category(models.Model):
         verbose_name_plural = 'Categories'
 
     name = models.CharField(max_length=200)
-    friendly_name = models.CharField(max_length=200, blank=True)
+    friendly_name = models.CharField(max_length=200, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
     def __str__(self):
@@ -28,6 +28,8 @@ class Product(models.Model):
     rating = models.DecimalField(
         max_digits=6, decimal_places=2, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
+    calories= models.DecimalField(
+        max_digits=6, null=True, blank=True, decimal_places=0)
 
     def __str__(self):
         return self.name

@@ -47,7 +47,7 @@
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card" style="width: 18rem;">
                                 {% if product.image %}
-                                <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                <img class="card-img-top img-fluid" style="width: 20rem; height: 13rem;" src="{{ product.image.url }}" alt="{{ product.name }}">
                                 {% else %}
                                 <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                                 {% endif %}
