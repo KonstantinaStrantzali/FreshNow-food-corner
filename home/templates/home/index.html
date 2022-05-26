@@ -30,18 +30,18 @@
         </div>
     </section>
     <!-- Categories -->
-    <section class="container-fluid px-5">
+    <section class="container-fluid">
         <div class="row">
             <div class="col-12 text-center my-3">
                 <h2 class="green">Categories</h2>
             </div>
         </div>
-        <div class="row pb-3 ml-4 mr-4 justify-content-around">
+        <div class="row">
             {% for c in category_list %}
-                <div class="categories col-12 col-md-5 text-center pb-3 mb-3">
+               <div class='col-12 col-md-6 text-center'>
                     {% if c.image %}
                         <a href="{% url 'products' %}?category={{ c.name }}">
-                            <img class="category-image" src="{{ c.image.url }}" alt="{{ c.name }}" class="img-responsive" height="140">
+                            <img class="category-image" src="{{ c.image.url }}" alt="{{ c.name }}" class="img-responsive" height="100">
                             <h5 class="pt-3 mb-0 pb-0 green">
                                 {{ c.friendly_name }}
                             </h5>
@@ -54,9 +54,9 @@
                             </h5>
                         </a>
                     {% endif %}
-                </div>
-            {% endfor %}
-        </div>
+                  </div>  
+                {% endfor %}
+            </div>            
     </section>
     <div class="btt-button border-green green bg-cream">
         <a class="btt-link d-flex h-100">
