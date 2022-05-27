@@ -12,7 +12,7 @@ def add_to_bag(request, item_id):
 
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
-    size = None
+    spicy = None
     if 'product_spicy' in request.POST:
         spicy = request.POST['product_spicy']
     bag = request.session.get('bag', {})

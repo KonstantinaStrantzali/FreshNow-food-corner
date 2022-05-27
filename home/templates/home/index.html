@@ -38,10 +38,10 @@
         </div>
         <div class="row">
             {% for c in category_list %}
-               <div class='col-12 col-md-6 text-center'>
+               <div class='col-12 col-md-6 text-center pb-0'>
                     {% if c.image %}
                         <a href="{% url 'products' %}?category={{ c.name }}">
-                            <img class="category-image" src="{{ c.image.url }}" alt="{{ c.name }}" class="img-responsive" height="100">
+                            <img class="category-image" src="{{ c.image.url }}" alt="{{ c.name }}" class="img-responsive">
                             <h5 class="pt-3 mb-0 pb-0 green">
                                 {{ c.friendly_name }}
                             </h5>
