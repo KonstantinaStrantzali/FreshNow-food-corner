@@ -48,6 +48,14 @@ html {
     
 }
 
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+.remove-item {
+    cursor: pointer;
+}
+
 
 @media (min-width: 1281px) {
     
