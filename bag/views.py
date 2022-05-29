@@ -12,7 +12,7 @@ def view_bag(request):
 
 def add_to_bag(request, item_id):
     """ Add a quantity of the specified product to the shopping bag """
-    
+
     product = Product.objects.get(pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
@@ -23,7 +23,7 @@ def add_to_bag(request, item_id):
 
     if spicy:
         if item_id in list(bag.keys()):
-            if size in bag[item_id]['spicy_level'].keys():
+            if spicy in bag[item_id]['spicy_level'].keys():
                 bag[item_id]['spicy_level'][spicy] += quantity
             else:
                 bag[item_id]['spicy_level'][spicy] = quantity
@@ -46,14 +46,14 @@ def adjust_bag(request, item_id):
     quantity = int(request.POST.get('quantity'))
     spicy = None
     if 'product_size' in request.POST:
-        size = request.POST['product_spicy']
+        spicy = request.POST['product_spicy']
     bag = request.session.get('bag', {})
 
     if spicy:
         if quantity > 0:
-            bag[item_id]['spicy_level'][size] = quantity
+            bag[item_id]['spicy_level'][spicy] = quantity
         else:
-            del bag[item_id]['spicy_level'][size]
+            del bag[item_id]['spicy_level'][spicy]
             if not bag[item_id]['spicy_level']:
                 bag.pop(item_id)
     else:
