@@ -52,10 +52,22 @@ html {
 .remove-item {
     cursor: pointer;
 }
-.remove-item {
-    cursor: pointer;
+
+.message-container {
+    position: fixed;
+    top: 90px;
+    right: -60px;
+    z-index: 999999;
+    min-width: 350px;
 }
 
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 6px;
+}
 
 @media (min-width: 1281px) {
     
