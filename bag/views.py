@@ -9,6 +9,7 @@ def view_bag(request):
     """ A view that renders the bag contents page """
 
     return render(request, 'bag/bag.html')
+    
 
 def add_to_bag(request, item_id):
     """ Add a quantity of the specified product to the shopping bag """
@@ -25,13 +26,17 @@ def add_to_bag(request, item_id):
         if item_id in list(bag.keys()):
             if spicy in bag[item_id]['spicy_level'].keys():
                 bag[item_id]['spicy_level'][spicy] += quantity
+                messages.success(request, f'Updated spicy level {spicy.upper()} {product.name} quantity to {bag[item_id]["spicy_level"][spicy]}')
             else:
                 bag[item_id]['spicy_level'][spicy] = quantity
+                messages.success(request, f'Added spicy {spicy.upper()} {product.name} to your bag')
         else:
             bag[item_id] = {'spicy_level': {spicy: quantity}}
+            messages.success(request, f'Added size {spicy.upper()} {product.name} to your bag')
     else:
         if item_id in list(bag.keys()):
             bag[item_id] += quantity
+            messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}')
         else:
             bag[item_id] = quantity
             messages.success(request, f'Added {product.name} to your bag')
@@ -45,7 +50,7 @@ def adjust_bag(request, item_id):
 
     quantity = int(request.POST.get('quantity'))
     spicy = None
-    if 'product_size' in request.POST:
+    if 'product_spicy' in request.POST:
         spicy = request.POST['product_spicy']
     bag = request.session.get('bag', {})
 

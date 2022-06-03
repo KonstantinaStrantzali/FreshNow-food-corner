@@ -128,20 +128,13 @@
         var itemId = $(this).attr('id').split('remove_')[1];
         var spicy = $(this).data('spicy');
         var url = `/bag/remove/${itemId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken, 'spicy': spicy};
-
+        var data = {'csrfmiddlewaretoken': csrfToken, 'product_spicy': spicy};
+      
         $.post(url, data)
          .done(function() {
              location.reload();
          });
     })
 
-    
-var toastElList = [].slice.call(document.querySelectorAll('.toast'))
-var toastList = toastElList.map(function(toastEl) {
-  return new bootstrap.Toast(toastEl)
-});
-toastList.forEach(toast => toast.show()); 
-console.log(toastList); 
 </script>
 {% endblock %}

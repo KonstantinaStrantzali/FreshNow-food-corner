@@ -77,10 +77,9 @@ html {
 
 .message-container {
     position: fixed;
-    top: 90px;
-    right: -60px;
-    z-index: 999999;
-    min-width: 350px;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
 }
 
 .custom-toast {
@@ -88,7 +87,7 @@ html {
 }
 
 .toast-capper {
-    height: 6px;
+    height: 2px;
 }
 
 @media (min-width: 1281px) {
