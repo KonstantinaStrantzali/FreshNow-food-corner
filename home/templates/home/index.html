@@ -36,25 +36,25 @@
                 <h2 class="green">Categories</h2>
             </div>
         </div>
-        <div class="row">
-            {% for c in category_list %}
-               <div class='col-12 col-md-6 text-center pb-0'>
-                    {% if c.image %}
-                        <a href="{% url 'products' %}?category={{ c.name }}">
-                            <img class="category-image" src="{{ c.image.url }}" alt="{{ c.name }}" class="img-responsive">
-                            <h5 class="pt-3 mb-0 pb-0 green">
-                                {{ c.friendly_name }}
-                            </h5>
-                        </a>
-                    {% else %}
-                        <a href="{% url 'products' %}?category={{ c.name }}">
-                            <img src="{{ MEDIA_URL }}noimage.png" alt="{{ c.name }}" class="img-responsive" height="130">
-                            <h5 class="pt-3 mb-0 pb-0 green">
-                                {{ c.friendly_name }}
-                            </h5>
-                        </a>
-                    {% endif %}
-                  </div>  
+            <div class="row pb-3 ml-4 mr-4 justify-content-around">
+                {% for c in category_list %}
+                    <div class="categories col-6 col-md-6 text-center pb-3 mb-3">
+                        {% if c.image %}
+                            <a href="{% url 'products' %}?category={{ c.backend_name }}">
+                                <img src="{{ c.image.url }}" alt="{{ c.friendly_name }}" class="img-responsive" height="140">
+                                <h5 class="pt-3 mb-0 pb-0 green">
+                                    {{ c.friendly_name }}
+                                </h5>
+                            </a>
+                        {% else %}
+                            <a href="{% url 'products' %}?category={{ c.backend_name }}">
+                                <img src="{{ MEDIA_URL }}noimage.png" alt="{{ c.friendly_name }}" class="img-responsive" height="130">
+                                <h5 class="pt-3 mb-0 pb-0 green">
+                                    {{ c.friendly_name }}
+                                </h5>
+                            </a>
+                        {% endif %}
+                    </div>
                 {% endfor %}
             </div>            
     </section>
