@@ -34,6 +34,9 @@ INSTALLED_APPS = [
     'products',
     'bag',
     'checkout',
+
+    # Other
+    'crispy_forms',
     
 ]
 
@@ -48,6 +51,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'freshNow_store.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 TEMPLATES = [
     {
@@ -67,6 +72,10 @@ TEMPLATES = [
                 'products.contexts.all_categories',
                 'bag.contexts.bag_contents',
             ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]
         },
     },
 ]
