@@ -51,7 +51,8 @@
                                 <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                                 {% endif %}
                                 <div class="card-body">
-                                  <h5 class="card-title">{{ product.name }}</h5>
+                                  <h5 class="card-title">{{ product.name }} </h5>
+                                  <span class="badge badge-pill bg-{{ product.get_label_display }}">NEW</span>
                                   <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }} </p>
                                   <p class="lead mb-0 text-left">{{ product.calories }}
                                   <div class="text-center">
