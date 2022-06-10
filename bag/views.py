@@ -32,7 +32,7 @@ def add_to_bag(request, item_id):
                 messages.success(request, f'Added spicy {spicy.upper()} {product.name} to your bag')
         else:
             bag[item_id] = {'spicy_level': {spicy: quantity}}
-            messages.success(request, f'Added size {spicy.upper()} {product.name} to your bag')
+            messages.success(request, f'Added spice {spicy.upper()} {product.name} to your bag')
     else:
         if item_id in list(bag.keys()):
             bag[item_id] += quantity

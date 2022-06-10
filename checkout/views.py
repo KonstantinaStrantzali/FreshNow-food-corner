@@ -47,7 +47,8 @@ def checkout(request):
                                 order=order,
                                 product=product,
                                 quantity=quantity,
-                                product_spicy=spicy,
+                                spicy_level=spicy,
+                                
                             )
                             order_line_item.save()
                 except Product.DoesNotExist:
