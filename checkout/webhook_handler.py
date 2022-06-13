@@ -91,12 +91,12 @@ class StripeWH_Handler:
                         )
                         order_line_item.save()
                     else:
-                        for size, quantity in item_data['items_by_size'].items():
+                        for spicy, quantity in item_data['spicy_level'].items():
                             order_line_item = OrderLineItem(
                                 order=order,
                                 product=product,
                                 quantity=quantity,
-                                product_size=size,
+                                spicy_level=spicy,
                             )
                             order_line_item.save()
             except Exception as e:
