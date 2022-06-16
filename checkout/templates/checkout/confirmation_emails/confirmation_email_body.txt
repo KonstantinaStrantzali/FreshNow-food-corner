@@ -1,6 +1,6 @@
 Hello {{ order.full_name }}!
 
-Your order in on the way!
+Your order is on the way!
 
 This is a confirmation of your order at FreshNow. Your order information is below:
 
