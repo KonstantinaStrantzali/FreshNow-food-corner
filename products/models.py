@@ -41,7 +41,5 @@ class Product(models.Model):
     is_spicy = models.BooleanField(default=False, null=True, blank=True)
     
 
-
-
     def __str__(self):
         return self.name
