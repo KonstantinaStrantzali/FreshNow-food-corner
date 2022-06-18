@@ -1,16 +1,32 @@
 html {
+ 
     height: 100%;
     scroll-behavior: smooth;
+    
 }
-
+.body-area{
+    background-color: #d6f58e;
+}
 .hero-container {
 	background: url('/media/background-image.avif') no-repeat center center fixed;
 	background-size: cover;
-	height: 65vh;
+	height: 75vh;
 	position: relative;
-    margin-top: 20px;
+ 
 	max-width: 100%;
 
+}
+
+.hero-overlay {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #d6f58e11;
+}
+
+.top-nav{
+    background-color: #d3e3b6;
 }
 
 .categories {
@@ -35,7 +51,7 @@ html {
     color:#990b16;
 }
 .navbar{
-    background-color: #BCDDA6;
+    background-color:#d6f58e;
     font-size: 20px;
     align-items: center;
    
@@ -52,6 +68,10 @@ html {
     width: 25%;
     height: auto;
     
+}
+
+.hero-area{
+    margin-top:10%;
 }
 
 
@@ -90,7 +110,7 @@ html {
     height: 2px;
 }
 
-* Product Form */
+/* Product form */
 
 .btn-file {
     position: relative;
@@ -134,12 +154,3 @@ html {
     }
 }
 
-
-@media (min-width: 1281px) {
-    
-    .hero-heading,
-    .header-container {
-        margin-top: 8rem;
-        
-    }
-}
