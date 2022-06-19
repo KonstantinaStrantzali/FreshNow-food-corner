@@ -99,7 +99,12 @@ html {
 .hero-area{
     margin-top:10%;
 }
+/* Cards */
 
+.card-price{
+    margin-bottom: 5px;
+
+}
 
 /* from Bulma */
 .icon {
@@ -180,3 +185,16 @@ html {
     }
 }
 
+@media (min-width: 768px) {
+    .hero-container {
+
+        height: 40vh;
+}
+}
+
+@media (max-width: 768px) {
+    .hero-container {
+
+        height: 45vh;
+}
+}

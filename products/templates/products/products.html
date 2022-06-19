@@ -2,10 +2,10 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container mt-5">
+    <div class="container header-container">
         <div class="row">
-            <div class="col mt-5">
-                <h1>Products</h1>
+            <div class="col mt-lg-0 mt-md-5 mt-sm-5">
+                <h1 class="text-center">Products</h1>
         </div>
     </div>
 {% endblock %}
@@ -23,7 +23,8 @@
     </div>
     <div class="col-sm-12 col-md-6 col-lg-4 my-auto d-flex justify-content-center justify-content-md-end">
         <div class="sort-select-wrapper-sort-by">
-            <select name="sort-selector" id="sort-selector" class="custom-select custom-select-sm border-green green">
+
+            <select class="selectpicker" data-style="btn-primary" name="sort-selector" id="sort-selector" >
                 <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
                 <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
                 <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
@@ -31,8 +32,7 @@
                 <option value="rating_desc" {% if current_sorting == 'review_desc' %}selected{% endif %}>Ratings (high to low)</option>
                 <option value="calories_asc" {% if current_sorting == 'calories_asc' %}selected{% endif %}>Calories (low-high)</option>
                 <option value="calories_desc" {% if current_sorting == 'calories_desc' %}selected{% endif %}>Calories (high- low)</option>
-                <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A - Z)</option>
-                <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z - A)</option>
+               
             </select>
         </div>
     </div>
@@ -52,9 +52,8 @@
                                 {% endif %}
                                 <div class="card-body">
                                   <h5 class="card-title">{{ product.name }} </h5>
-                                  <span class="badge badge-pill bg-{{ product.get_label_display }}">NEW</span>
-                                  <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }} </p>
-                                  <p class="lead mb-0 text-left">{{ product.calories }}
+                                  <p class="card-price fs-4">£{{ product.price }} </p>
+                                  <p class=""> <i class="fa-solid fa-weight-scale me-2"></i>{{ product.calories }} Cal </p>
                                   <div class="text-center">
                                   {% if product.rating %}
                                     <small class="text-muted text-right"><i class="fas fa-star mr-5"></i>{{ product.rating }} / 5</small>
@@ -62,10 +61,12 @@
                                     <small class="text-muted text-right">No Rating</small>
                                   {% endif %}
                                   {% if request.user.is_superuser %}
+                                  <div>
                                   <small class="ml-3">
                                       <a href="{% url 'edit_product' product.id %}">Edit</a> | 
                                       <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
                                   </small>
+                                  </div>
                               {% endif %}
                                   </div>
                                  </div>
@@ -74,15 +75,16 @@
 
                                   </div>
                               </div>
-                           </div>
-                          
+                            </div>
                         
                     {% endfor %}
                 </div>
             </div>
         </div>
     </div>
+</div>
 {% endblock %}
+
 {% block postloadjs %}
     {{ block.super }}
     <script type="text/javascript">
