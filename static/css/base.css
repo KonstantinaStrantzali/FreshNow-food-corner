@@ -5,20 +5,24 @@ html {
     
 }
 .body-area{
-    background-color: #d6f58e;
+  background-color:rgba(195, 233, 155, 0.459);
+  
 }
 .hero-container {
-	background: url('/media/background-image.avif') no-repeat center center fixed;
+	background: url('/media/background-image.jpeg') no-repeat center center fixed;
 	background-size: cover;
 	height: 75vh;
 	position: relative;
- 
 	max-width: 100%;
 
 }
+.hero-area{
+    margin-left: 25%;
+    color:azure;
+}
 
 .social-media-section{
-    background-color: #F6F3E8ff;
+    background-color: rgb(116, 67, 53);
   }
   .list-inline-item i {
     font-size: 30px;
@@ -26,40 +30,42 @@ html {
   }
 
   .fa-facebook {
-    background-color: #3B5998;
     color: #F6F3E8ff;
   }
 
   .fa-linkedin {
-    background-color: #F6F3E8ff;
-    color: #3B5998;
+    color: #F6F3E8ff;;
   }
 
   .fa-instagram{
-    background: #F6F3E8ff;
-    color: rgb(145, 6, 138);
+    color: #F6F3E8ff;;
   }
   .list-inline-item a i:hover {
     transform: translateY(2px);
   }
 
-.hero-overlay {
-    position: absolute;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #d6f58e11;
-}
 
 .top-nav{
-    background-color: #d3e3b6;
+    background-color: rgb(116, 67, 53);
+}
+.order-button{
+    background-color: #E92500;
+    color:white;
+}
+.selectpicker{
+    background-color: #E92500 !important;
+    color:white;
+}
+.selectpicker :hover {
+
+    background-color: #e92700d5 !important;
+    color:white;
 }
 
 .categories {
     width: 40%;
     background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-   
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
     padding: 0;
 }
 
@@ -72,12 +78,14 @@ html {
 .categories a:hover {
     text-decoration: none;
 }
-
-.categories h5:hover {
-    color:#990b16;
+.categories a{
+    text-decoration: none;
+    color: rgb(116, 67, 53);
 }
+
+
 .navbar{
-    background-color:#d6f58e;
+    background-color:white;
     font-size: 20px;
     align-items: center;
    
@@ -88,16 +96,17 @@ html {
     list-style-type: none;
     }
 
-.logo{
-    margin-top: -20px;
-    margin-bottom: -30px;
-    width: 25%;
-    height: auto;
+.logo{ 
+    color: white;
+    font-size: 30px;
+    padding: 5px;
+    transform: rotate(30deg); 
     
 }
 
 .hero-area{
-    margin-top:10%;
+    color:white;
+    margin-top:15%;
 }
 /* Cards */
 
@@ -105,6 +114,7 @@ html {
     margin-bottom: 5px;
 
 }
+
 
 /* from Bulma */
 .icon {
@@ -168,6 +178,11 @@ html {
     border-color: #dc3545;
     border-radius: 0;
 }
+.quantity-control,
+.spicy-control{
+    margin-left: 25%;
+}
+
 
 
 /* fixed top navbar only on medium and up */
@@ -185,12 +200,7 @@ html {
     }
 }
 
-@media (min-width: 768px) {
-    .hero-container {
 
-        height: 40vh;
-}
-}
 
 @media (max-width: 768px) {
     .hero-container {
@@ -198,3 +208,4 @@ html {
         height: 45vh;
 }
 }
+

@@ -11,13 +11,12 @@
     <!-- Hero Section -->
     <section class="container-fluid px-0">
         <div class="hero-container img-fluid">
-            
-            <div class="row h-100">
-                <div class="col hero-area text-center text-lg-right">
-                    <h1 class="hero-heading text-center mt-5">The taste of <span class="cream">Fresh</span> on your table!</h1>
+            <div class="row h-100 mx-0">
+                <div class="col text-center text-lg-right">
+                    <h1 class="pt-4 hero-area">The taste of Fresh on your table!</h1>
                 </div>
                 <div class="text-center">
-                <a class="btn btn-primary" href="{% url 'products' %}" role="button">Order Now</a>
+                <a class="btn order-button" href="{% url 'products' %}" role="button">Order Now</a>
             
                 </div>
             </div>
@@ -27,7 +26,7 @@
     <section class="container-fluid">
         <div class="row">
             <div class="col-12 text-center my-3">
-                <h2 class="green">Categories</h2>
+                <h2 class="">Categories</h2>
             </div>
         </div>
             <div class="row pb-3 ml-4 mr-4 justify-content-center">
@@ -36,7 +35,7 @@
                         {% if c.image %}
                             <a href="{% url 'products' %}?category={{ c.name }}">
                                 <img src="{{ c.image.url }}" alt="{{ c.friendly_name }}" class="img-responsive" height="170">
-                                <h5 class="pt-3 mb-0 pb-0 green">
+                                <h5 class="categories-name pt-3 mb-0 pb-0">
                                     {{ c.friendly_name }}
                                 </h5>
                             </a>

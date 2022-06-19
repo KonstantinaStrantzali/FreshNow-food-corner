@@ -24,7 +24,7 @@
     <div class="col-sm-12 col-md-6 col-lg-4 my-auto d-flex justify-content-center justify-content-md-end">
         <div class="sort-select-wrapper-sort-by">
 
-            <select class="selectpicker" data-style="btn-primary" name="sort-selector" id="sort-selector" >
+            <select class="selectpicker" data-style="" name="sort-selector" id="sort-selector" >
                 <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
                 <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
                 <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
@@ -46,7 +46,7 @@
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-5">
                             <div class="card h-100" style="width:auto;">
                                 {% if product.image %}
-                                <img class="card-img-top img-fluid" style="width: 20rem; height: 13rem;" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                <img class="card-img-top img-fluid" style="width:auto; height: 13rem;" src="{{ product.image.url }}" alt="{{ product.name }}">
                                 {% else %}
                                 <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                                 {% endif %}
