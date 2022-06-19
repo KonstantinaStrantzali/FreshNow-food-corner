@@ -112,17 +112,19 @@ WSGI_APPLICATION = 'freshNow_store.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
 DATABASES = {
     'default': dj_database_url.parse('postgres://okwgvzyyyfunko:4634d2778f0a32dddd0cb87df95e7a66d447b2ec6f6a9c710d82950a27ef7d0a@ec2-54-228-32-29.eu-west-1.compute.amazonaws.com:5432/d5p6d6tq445h8j')
         
     }
-}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

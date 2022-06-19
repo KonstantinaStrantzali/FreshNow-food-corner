@@ -17,6 +17,32 @@ html {
 
 }
 
+.social-media-section{
+    background-color: #F6F3E8ff;
+  }
+  .list-inline-item i {
+    font-size: 30px;
+    margin:0px;
+  }
+
+  .fa-facebook {
+    background-color: #3B5998;
+    color: #F6F3E8ff;
+  }
+
+  .fa-linkedin {
+    background-color: #F6F3E8ff;
+    color: #3B5998;
+  }
+
+  .fa-instagram{
+    background: #F6F3E8ff;
+    color: rgb(145, 6, 138);
+  }
+  .list-inline-item a i:hover {
+    transform: translateY(2px);
+  }
+
 .hero-overlay {
     position: absolute;
     left: 0;
