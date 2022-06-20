@@ -1,0 +1,1 @@
+web: gunicorn freshNow_store.wsgi:application

@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-1-_xm1klg4jqq6%ejm!hq(u(ulh3wo=28!*6r)02mi_4)rswt#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['freshnow-store.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -112,18 +112,22 @@ WSGI_APPLICATION = 'freshNow_store.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-
-DATABASES = {
-    'default': dj_database_url.parse('postgres://okwgvzyyyfunko:4634d2778f0a32dddd0cb87df95e7a66d447b2ec6f6a9c710d82950a27ef7d0a@ec2-54-228-32-29.eu-west-1.compute.amazonaws.com:5432/d5p6d6tq445h8j')
-        
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+
+
+#DATABASES = {
+# 'default': dj_database_url.parse('postgres://okwgvzyyyfunko:4634d2778f0a32dddd0cb87df95e7a66d447b2ec6f6a9c710d82950a27ef7d0a@ec2-54-228-32-29.eu-west-1.compute.amazonaws.com:5432/d5p6d6tq445h8j')
+#}
 
 
 # Password validation
