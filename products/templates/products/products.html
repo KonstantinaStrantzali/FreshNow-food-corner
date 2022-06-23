@@ -5,7 +5,7 @@
     <div class="container header-container">
         <div class="row">
             <div class="col mt-lg-0 mt-md-5 mt-sm-5">
-                <h1 class="text-center">Products</h1>
+                <h1 class="text-center text-light">Products</h1>
         </div>
     </div>
 {% endblock %}
@@ -14,17 +14,17 @@
     <!-- Sort By -->
    <div class="row mb-3">
     <div class="col-sm-12 col-md-7 ml-lg-5">
-        <p class="green-muted mt-3 text-left">
+        <p class="text-light mt-3 text-left">
             {% if search_term or current_categories or current_sorting != 'None_None' %}
-                <span class="small"><a class="site-font red" href="{% url 'products' %}">Meals</a> | </span>
+                <span class="small"><a class="site-font text-light" href="{% url 'products' %}">Meals</a> | </span>
             {% endif %}
             {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
         </p>
     </div>
-    <div class="col-sm-12 col-md-6 col-lg-4 my-auto d-flex justify-content-center justify-content-md-end">
+    <div class="col-sm-12 col-md-6 col-lg-4 my-auto d-flex justify-content-center justify-content-md-end text-light">
         <div class="sort-select-wrapper-sort-by">
 
-            <select class="selectpicker" data-style="" name="sort-selector" id="sort-selector" >
+            <select class="selectpicker text-light" data-style="" name="sort-selector" id="sort-selector" >
                 <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
                 <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
                 <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
