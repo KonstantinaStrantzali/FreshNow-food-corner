@@ -70,14 +70,9 @@ html {
     color:white;
 }
 .selectpicker{
-    background-color: #E92500 !important;
-    color:rgba(250, 255, 255, 0.774);
+    color: white;
 }
-.selectpicker :hover {
 
-    background-color: #e92700d5 !important;
-    color:white;
-}
 
 .categories {
     width: 40%;
@@ -275,4 +270,9 @@ html {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     padding-left: 0.7rem;
+}
+
+.btn-details{
+    background-color:#E92500;
+    color: white;
 }
