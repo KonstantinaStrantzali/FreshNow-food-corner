@@ -9,6 +9,12 @@
     padding: 0;
     border-bottom: 2px solid var(--main-color);
 }
+.navbar-toggler{
+    background-color:white; 
+}
+.navbar-toggler-icon{
+    color:#E92500 !important;
+}
 
 html {
  
@@ -88,6 +94,11 @@ html {
 
 .categories {
     width: 40%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+    padding: 0;
+}
+.image-container {
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
     padding: 0;

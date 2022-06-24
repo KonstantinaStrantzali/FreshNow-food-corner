@@ -4,7 +4,7 @@
             
             <div class="text-center">
                 <div>
-                    <i class="fas fa-search fa-lg green"></i>
+                    <i class="fas fa-search fa-lg text-light"></i>
                     <span class="sr-only">Search our Delicatessen</span>
                 </div>
             </div>
@@ -29,22 +29,22 @@
         <a class="nav-link d-block d-lg-none" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <div class="text-center">
                 <div>
-                    <i class="fas fa-user fa-lg green"></i>
+                    <i class="fas fa-user fa-lg text-light"></i>
                     <p class="sr-only">Account</p>
                 </div>
             </div>
         </a>
-        <div class="dropdown-menu border-0 bg-cream" aria-labelledby="user-options-mobile">
+        <div class="dropdown-menu border-0" aria-labelledby="user-options-mobile">
             {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
-                    <a href="{% url 'add_product' %}" class="dropdown-item green">Add Product</a>
+                    <a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a>
                
                 {% endif %}
-                <a href="{% url 'profile' %}" class="dropdown-item green">My Profile</a>
-                <a href="{% url 'account_logout' %}" class="dropdown-item green">Logout</a>
+                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
             {% else %}
-                <a href="{% url 'account_signup' %}" class="dropdown-item green">Register</a>
-                <a href="{% url 'account_login' %}" class="dropdown-item green">Login</a>
+                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
             {% endif %}
         </div>
     </li>
@@ -64,7 +64,7 @@
         <a class="{% if grand_total %}font-weight-bold{% endif %} nav-link d-block d-lg-none" href="{% url 'view_bag' %}">
             <div class="text-center">
                 <div>
-                    <i class="fas fa-shopping-basket fa-lg green"></i>
+                    <i class="fas fa-shopping-basket fa-lg text-light"></i>
                     <span class="sr-only">Shopping Basket</span>
                 </div>
             </div>
