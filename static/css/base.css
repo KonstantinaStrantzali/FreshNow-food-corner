@@ -98,7 +98,7 @@ html {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
     padding: 0;
 }
-.card-img-top {
+.product-card {
 box-shadow: 10px 10px 7px #BBF;
 border-radius: 15px;
 border: 5px solid #EEE; }
