@@ -241,6 +241,9 @@ border: 5px solid #EEE; }
 
         height: 45vh;
 }
+.header-container{
+    margin-top: 25%;
+}
 }
 
 .form-user{
@@ -298,56 +301,15 @@ border: 5px solid #EEE; }
     background-color:#E92500;
     color: white;
 }
-.restaurants-main {
- color: white;
+section#aboutSection .about-image img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    border-radius: 0.25rem;
 }
 
-.all-pages-main-right {
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    color: beige;
-}
 
-.left-photo > img {
-    width: 600px;
-}
-
-.right-info {
-    width: 600px;
-    height: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-.right-info > h2 {
-    text-align: center;
-}
-.all-pages-main-left {
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    color:white;
-}
-
-.right-photo > img {
-    width: 600px;
-}
-
-.left-info {
-    width: 600px;
-    height: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-.left-info > h2 {
-    text-align: center;
-}
 
 .product-layout{
    background-color: #E92500;
