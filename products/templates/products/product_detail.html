@@ -32,7 +32,21 @@
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
             <div class="product-details-container mb-5 me-lg-5">
                 <div class="product-layout">
-                    <p class="mb-2 fs-4 mt-lg-5">{{ product.name }}</p>
+                    <p class="mb-2 fs-4 mt-lg-5">{{ product.name }}</p> <div class="col-1 col-sm-2 col-lg-4 pl-0 mt-5">
+                        <p class="text-right">
+                            {% if wishlist %}
+                                <span class="d-none d-lg-inline-block text-dark">Remove from Wishlist: </span>
+                                <a href="">
+                                    <i class="hover-heart-green fas fa-heart fa-lg ml-1 mt-3 red"></i>
+                                </a>
+                            {% else %}
+                                <span class="d-none d-lg-inline-block order-button">Add to Wishlist: </span>
+                                <a class="wishlist_btn hvr-grow" href="{% if user.is_authenticated %}{% url 'add_to_wishlist' product.id %}{% else %}{% url 'account_login' %}{% endif %}">
+                                    <i class="hover-heart-red far fa-heart fa-lg ml-1 mt-3 green"></i>
+                                </a>
+                            {% endif %}
+                        </p>
+                    </div>
                     <p class="fs-5">£{{ product.price }}</p>
                     {% if product.rating %}
                     <p class="rating"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5 </p>
