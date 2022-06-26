@@ -83,6 +83,10 @@ html {
     background-color: #E92500;
     color:white;
 }
+.red-background{
+    background-color: #E92500;
+    color:white;
+}
 
 .order-button:hover{
     background-color: #e92700c9;
