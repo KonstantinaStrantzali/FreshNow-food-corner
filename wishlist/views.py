@@ -37,3 +37,5 @@ def add_to_wishlist(request, product_id):
 
     return redirect(reverse('product_detail', args=[product.id]))
 
+
+

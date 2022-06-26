@@ -84,10 +84,21 @@
                         </div>
                     </li>
                     <li class="list-inline-item">
+                        <a class="nav-link" href="{% url 'wishlist' %}">
+                            <div class="text-center text-light">
+                                <div>
+                                    <i class="fas fa-heart fa-lg mt-0"></i>
+                                </div>
+                                <p class="my-0">Wishlist</p>
+                        
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
                         <a class="{% if grand_total %}font-weight-bold{% endif %} nav-link" href="{% url 'view_bag' %}">
                             <div class="text-center text-light">
                                 <div>
-                                    <i class="fas fa-shopping-basket fa-lg green"></i>
+                                    <i class="fas fa-shopping-basket fa-lg"></i>
                                 </div>
                                 <p class="text-right my-0">
                                     {% if grand_total %}
