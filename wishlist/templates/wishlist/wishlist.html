@@ -50,12 +50,12 @@
                                         <td class="py-3 w-50 pl-md-4 pr-lg-5">
                                             <p class="my-0 green mb-4"><strong>{{ product.product.name }}</strong></p>
                                             <div>
-                                                <p class="my-0 mr-lg-5 green">{{ product.product.description }}</p>
+                                                <p class="my-0 mr-lg-5">{{ product.product.description }}</p>
                                             </div>
                                         </td>
                                         <td class="py-3">
-                                            <p class="my-0 green"><strong>€{{ product.product.price }}</strong></p>
-                                            <a class="text-light display-6" href=""><i class="fas fa-trash-alt mt-5"></i></a>
+                                            <p class="my-0"><strong>€{{ product.product.price }}</strong></p>
+                                            <a class="text-light display-6" href="{% url 'delete_wishlist_item' product.product.id %}"><i class="fas fa-trash-alt mt-5"></i></a>
                                         </td>
                                         <td class="py-3">
                                             
@@ -66,7 +66,7 @@
                         </table>
                     </div>
                 {% else %}
-                    <p class="lead mb-5 green">You have no products in your Wishlist.</p>
+                    <p class="lead mb-5 green text-center">You have no products in your Wishlist.</p>
                 {% endif %}
             </div>
         </div>   
