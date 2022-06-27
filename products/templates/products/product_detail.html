@@ -33,16 +33,16 @@
             <div class="product-details-container mb-5 me-lg-5">
                 <div class="product-layout">
                     <p class="mb-2 fs-4 mt-lg-5">{{ product.name }}</p> <div class="col-1 col-sm-2 col-lg-4 pl-0 mt-5">
-                        <p class="text-right">
+                        <p class="text-center">
                             {% if wishlist %}
-                                <span class="d-none d-lg-inline-block text-dark">Remove from Wishlist: </span>
-                                <a href="">
-                                    <i class="hover-heart-green fas fa-heart fa-lg ml-1 mt-3 red"></i>
+                                <span class="d-none d-lg-inline-block text-center light ">Remove from Wishlist: </span>
+                                <a href="{% url 'delete_wishlist_item' product.id %}">
+                                    <i class="text-light fas fa-heart fa-lg ml-1 mt-3 red"></i>
                                 </a>
-                            {% else %}
+                                {% else %}
                                 <span class="d-none d-lg-inline-block order-button">Add to Wishlist: </span>
                                 <a class="wishlist_btn hvr-grow" href="{% if user.is_authenticated %}{% url 'add_to_wishlist' product.id %}{% else %}{% url 'account_login' %}{% endif %}">
-                                    <i class="hover-heart-red far fa-heart fa-lg ml-1 mt-3 green"></i>
+                                    <i class="far fa-heart fa-lg ml-1 mt-3 green"></i>
                                 </a>
                             {% endif %}
                         </p>

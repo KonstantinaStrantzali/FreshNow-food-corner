@@ -10,18 +10,20 @@ from wishlist.models import Wishlist
 
 @login_required
 def wishlist(request):
-    """ A view to return the wishlist page """
-
+    """
+    A view to render the user's wishlist
+    """
     user = get_object_or_404(UserProfile, user=request.user)
-    wishlist= Wishlist.objects.filter(profile_user =user)
+    wishlist = Wishlist.objects.filter(profile_user=user)
 
     template = 'wishlist/wishlist.html'
-
     context = {
         'wishlist': wishlist,
     }
-    
-    return render(request,template,context)
+    print(wishlist)
+
+    return render(request, template, context)
+
 
 @login_required
 def add_to_wishlist(request, product_id):

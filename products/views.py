@@ -5,6 +5,8 @@ from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
 from .models import Product, Category
 from .forms import ProductForm
+from profiles.models import UserProfile
+from wishlist.models import Wishlist
 
 # Create your views here.
 
@@ -51,11 +53,17 @@ def all_products(request):
 
     current_sorting = f'{sort}_{direction}'
 
+    wishlist = None
+    if request.user.is_authenticated:
+        user = get_object_or_404(UserProfile, user=request.user)
+        wishlist = Wishlist.objects.filter(profile_user=user)
+
     context = {
         'products': products,
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        'wishlist': wishlist,
     }
 
     return render(request, 'products/products.html', context)
@@ -65,11 +73,27 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
 
-    context = {
+    if not request.user.is_authenticated:
+        template = 'products/product_detail.html'
+
+        context = {
         'product': product,
     }
+        return render(request, template, context)
+    else:
+        profile_user = get_object_or_404(UserProfile, user=request.user)
+        # find a match to the product and user
+        wishlist = Wishlist.objects.filter(
+                   profile_user=profile_user, product=product_id)
+        template = 'products/product_detail.html'
+        context = {
+            
+            'product': product,
+            'profile_user': profile_user,
+            'wishlist': wishlist,
+        }
 
-    return render(request, 'products/product_detail.html', context)
+        return render(request, template, context)
 
 @login_required
 def add_product(request):
