@@ -61,7 +61,7 @@
                     {% endif %}
                     <p class="mt-3">{{ product.description }}</p>
 
-                    <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                    <form class="hidden" name="redirect_url" action="{% url 'add_to_bag' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row text-center">
                             {% with product.is_spicy as s %}
@@ -106,13 +106,13 @@
                         </div>
 
                         <div class="col-12">
-                            <a href="{% url 'products' %}" class="btn mt-5">
+                            <a href="{% url 'products' %}" class="btn btn-outline-dark mt-5">
                                 <span class="icon">
                                     <i class="fas fa-chevron-left"></i>
                                 </span>
-                                <span class="btn btn-details">Back to meals</span>
+                                <span class="btn btn-light">Back to meals</span>
                             </a>
-                            <input type="submit" class="btn btn-details mt-5" value="Order Now">
+                            <input type="submit" class="btn btn-light mt-5" value="Order Now">
                         </div>
                 </div>
                 </form>
@@ -121,6 +121,7 @@
         </div>
     </div>
 </div>
+
 
 
 {% endblock %}
