@@ -65,7 +65,7 @@
                     {% endif %}
                     <p class="mt-3">{{ product.description }}</p>
 
-                    <form class="hidden" name="redirect_url" action="{% url 'add_to_bag' product.id %}" method="POST">
+                    <form class="form" name="redirect_url" action="{% url 'add_to_bag' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row text-center">
                             {% with product.is_spicy as s %}

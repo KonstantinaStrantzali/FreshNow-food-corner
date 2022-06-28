@@ -46,7 +46,7 @@ def add_to_bag(request, item_id):
 
     request.session['bag'] = bag
 
-    return redirect(redirect_url)
+    return redirect(reverse('view_bag'))
     
 
 
