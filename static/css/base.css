@@ -32,6 +32,10 @@ html {
  
   
 }
+.heart-icon{
+    font-size: 30px;
+}
+
 .hero-container {
 	background: url('/media/background-image.avif') no-repeat center center fixed;
 	background-size: cover;
