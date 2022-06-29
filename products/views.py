@@ -5,9 +5,11 @@ from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
 from .models import Product, Category
 from .forms import ProductForm
+
+from reviews.models import Reviews
+from reviews.forms import ReviewForm
 from profiles.models import UserProfile
 from wishlist.models import Wishlist
-from reviews.forms import ReviewForm
 
 # Create your views here.
 
@@ -126,7 +128,7 @@ def add_product(request):
     return render(request, template, context)
 
 @login_required
-def edit_product(request,product_id):
+def edit_product(request, product_id):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -175,7 +177,10 @@ def add_review(request, product_id):
         if request.method == 'POST':
             form = ReviewForm(request.POST)
             if form.is_valid():
-                review = form.save()
+                review = form.save(commit=False)
+                review.product = product
+                review.profile_user = request.user
+                review.save()
                 messages.success(request, 'Your review was successful')
                 return redirect(reverse('product_detail', args=[product.id]))
             else:
@@ -186,3 +191,35 @@ def add_review(request, product_id):
     }
 
     return render(request, context)
+
+@login_required
+def edit_review(request, review_id):
+    """
+    A view to allow the users to edit their own review
+    """
+
+    review = get_object_or_404(ProductReview, pk=review_id)
+    product = review.product
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            messages.info(request, 'Review has been changed')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(
+                request, 'Review edit failed, Please try again')
+
+    else:
+        form = ReviewForm(instance=review)
+
+    messages.info(request, 'You are editing your review')
+    template = 'products/product_detail.html'
+    context = {
+        'form': form,
+        'review': review,
+        'product': product,
+        'edit': True,
+    }
+    return render(request, template, context)

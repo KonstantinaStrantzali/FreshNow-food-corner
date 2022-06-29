@@ -16,8 +16,8 @@ class Reviews(models.Model):
     profile_user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     rating = models.IntegerField(choices=RATING)
-    review= models.TextField(max_length=1500)
-    created_date= models.DateTimeField(auto_now_add=True)
+    review = models.TextField(max_length=1500)
+    created_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         
