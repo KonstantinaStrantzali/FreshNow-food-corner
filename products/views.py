@@ -7,6 +7,7 @@ from .models import Product, Category
 from .forms import ProductForm
 from profiles.models import UserProfile
 from wishlist.models import Wishlist
+from reviews.forms import ReviewForm
 
 # Create your views here.
 
@@ -85,12 +86,17 @@ def product_detail(request, product_id):
         # find a match to the product and user
         wishlist = Wishlist.objects.filter(
                    profile_user=profile_user, product=product_id)
+
+        form = ReviewForm()
         template = 'products/product_detail.html'
+
+       
         context = {
             
             'product': product,
             'profile_user': profile_user,
             'wishlist': wishlist,
+            'form': form,
         }
 
         return render(request, template, context)
@@ -156,3 +162,27 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+@login_required
+def add_review(request, product_id):
+    """
+    A view to allow the user to add a review to a product
+    """
+
+    product = get_object_or_404(Product, pk=product_id)
+
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            form = ReviewForm(request.POST)
+            if form.is_valid():
+                review = form.save()
+                messages.success(request, 'Your review was successful')
+                return redirect(reverse('product_detail', args=[product.id]))
+            else:
+                messages.error(
+                    request, 'Failed to add your review')
+    context = {
+        'form': form
+    }
+
+    return render(request, context)
