@@ -170,7 +170,7 @@ def add_review(request, product_id):
     """
     A view to allow the user to add a review to a product
     """
-
+    user = get_object_or_404(UserProfile, user=request.user)
     product = get_object_or_404(Product, pk=product_id)
 
     if request.user.is_authenticated:
@@ -179,7 +179,7 @@ def add_review(request, product_id):
             if form.is_valid():
                 review = form.save(commit=False)
                 review.product = product
-                review.profile_user = request.user
+                review.profile_user = user
                 review.save()
                 messages.success(request, 'Your review was successful')
                 return redirect(reverse('product_detail', args=[product.id]))
