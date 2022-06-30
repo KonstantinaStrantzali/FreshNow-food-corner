@@ -90,9 +90,9 @@ def product_detail(request, product_id):
                    profile_user=profile_user, product=product_id)
 
         form = ReviewForm()
+    
         template = 'products/product_detail.html'
 
-       
         context = {
             
             'product': product,

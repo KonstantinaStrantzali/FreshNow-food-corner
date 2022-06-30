@@ -38,19 +38,19 @@
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <button class="decrement-qty btn btn-sm btn-info" 
+                                        <button class="decrement-qty btn btn-sm btn order-button" 
                                             data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
                                             <span>
                                                 <i class="fas fa-minus fa-small"></i>
                                             </span>
                                         </button>
                                     </div>
-                                    <input class="form-control form-control-sm qty_input" type="number"
+                                    <input class="form-control form-control-sm qty_input " type="number"
                                         name="quantity" value="{{ item.quantity }}" min="1" max="99"
                                         data-item_id="{{ item.item_id }}"
                                         id="id_qty_{{ item.item_id }}">
                                     <div class="input-group-append">
-                                        <button class="increment-qty btn btn-sm btn-info"
+                                        <button class="increment-qty btn btn-sm order-button"
                                             data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
                                             <span>
                                                 <i class="fas fa-plus fa-small"></i>
@@ -63,8 +63,8 @@
                                 </div>
                             </div>
                         </form>
-                        <a class="update-link text-info"><small>Update</small></a>
-                        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-spicy="{{ item.spicy }}"><small>Remove</small></a>
+                        <a class="btn order-button edit-btn m-2"><small>Update</small></a>
+                        <a class="btn order-button edit-btn" id="remove_{{ item.item_id }}" data-spicy="{{ item.spicy }}"><small>Remove</small></a>
             
                         </a>
                         <p class="my-0"> <strong>Total</strong> £ {{ item.product.price | calc_subtotal:item.quantity }}</p>
@@ -81,13 +81,13 @@
                             You could get free delivery by spending just <strong>£{{ free_delivery_delta }}</strong> more!
                         </p>
                     {% endif %}
-                    <a class="btn btn-light mt-1" href="{% url 'products' %}">
+                    <a class="btn order-button mt-1" href="{% url 'products' %}">
                         <span class="icon">
-                            <i class="text-info fas fa-chevron-left"></i>
+                            <i class="fas fa-chevron-left"></i>
                         </span>
-                        <span class="text-info font-weight-bold text-uppercase">Keep Shopping</span>
+                        <span class="order-button font-weight-bold text-uppercase">Keep Shopping</span>
                     </a>
-                    <a class="btn btn-info mt-1" href="{% url 'checkout' %}">
+                    <a class="btn order-button mt-1" href="{% url 'checkout' %}">
                         <span class="text-uppercase font-weight-bold text-light">Secure Checkout</span>
                         <span class="icon">
                             <i class="fas fa-lock"></i>
@@ -103,7 +103,7 @@
                     <span class="icon">
                         <i class="text-info fas fa-chevron-left"></i>
                     </span>
-                    <span class="text-uppercase font-weight-bold text-info">Keep Shopping</span>
+                    <span class="text-uppercase font-weight-bold order-button">Keep Shopping</span>
                 </a>
             </div>
         {% endif %}
