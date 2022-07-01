@@ -130,7 +130,7 @@
 
 <div id="reviews" class="row">
     <div class="col-12 col-md-10 col-lg-4 offset-lg-4 mt-5">
-        <h2 class="text-black font-weight-bold mt-5">Reviews</h2>
+        <h2 class="text-light font-weight-bold mt-5">Reviews</h2>
         {% if request.user.is_authenticated %}
             {% if edit %}
                 <!-- Edit Review Form -->
@@ -157,13 +157,75 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-12 col-md-10 col-lg-6 offset-lg-3">  
+    <div class="col-12 col-md-10 col-lg-6 offset-lg-3 mb-3">  
         <!-- Showing all product reviews-->
         {% for review in product.reviews_set.all %}
             <div class="card review-container mt-5">
                 <!-- Edit Review Button-->
                 {% if review.user == request.user or request.user.is_superuser %}
                     <div class="card-head text-right">
+                        <div class="row pr-0">
+                            <div class="col-12 col-sm-8 col-md-9 col-lg-8">
+                                {% if review.rating == 5 %}
+                                    <p>
+                                        <small class="text-warning">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+        
+                                        </small>
+                                    </p>
+                              
+                                {% elif review.rating == 4 %}
+                                    <p>
+                                        <small class="text-warning">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </small>
+                                    </p>
+                                {% elif avg_rating == 3 %}
+                                    <p>
+                                        <small class="text-warning">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </small>
+                                    </p>
+                                {% elif review.rating == 2 %}
+                                    <p>
+                                        <small class="text-warning">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </small>
+                                    </p>
+                                {% elif review.rating == 1.5 %}
+                                    <p>
+                                        <small class="text-warning">
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </small>
+                                    </p>
+                                {% else %}
+                                    <p>
+                                        <small class="green-muted">
+                                            No Reviews
+                                        </small>
+                                    </p>
+                                {% endif %}
+                            </div>
                         <a class="" href="">
                             Edit Review
                         </a>
@@ -171,7 +233,7 @@
                 {% endif %}
                 <div class="card-body">
                     <p class="text-dark">{{ review.review }}</p>
-                    <p class="small"> by {{ review.user }} on {{ review.created_date|date:"d-m-Y"}}</p>    
+                    <p class="small text-dark"> by {{ review.profile_user}} on {{ review.created_date|date:"d-m-Y"}}</p>    
                    
                 </div>
             </div>
