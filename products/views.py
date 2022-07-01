@@ -5,6 +5,7 @@ from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
 from .models import Product, Category
 from .forms import ProductForm
+from django.db.models import Avg
 
 from reviews.models import Reviews
 from reviews.forms import ReviewForm
@@ -61,6 +62,7 @@ def all_products(request):
         user = get_object_or_404(UserProfile, user=request.user)
         wishlist = Wishlist.objects.filter(profile_user=user)
 
+
     context = {
         'products': products,
         'search_term': query,
@@ -75,12 +77,20 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
+    reviews = Reviews.objects.all().filter(product=product)
+    avg_rating = reviews.aggregate(Avg('rating'))['rating__avg']
+    if avg_rating is not None:
+        # round to the nearest 0.5 value
+        avg_rating = round(avg_rating * 2) / 2
+    
 
     if not request.user.is_authenticated:
         template = 'products/product_detail.html'
 
         context = {
-        'product': product,
+            'product': product,
+            'reviews': reviews,
+            'avg_rating': avg_rating,
     }
         return render(request, template, context)
     else:
@@ -89,8 +99,11 @@ def product_detail(request, product_id):
         # find a match to the product and user
         wishlist = Wishlist.objects.filter(
                    profile_user=profile_user, product=product_id)
-
+       
         form = ReviewForm()
+        reviews = Reviews.objects.all().filter(product=product)
+        avg_rating = reviews.aggregate(Avg('rating'))['rating__avg']
+        product.rating = avg_rating
     
         template = 'products/product_detail.html'
 
@@ -100,6 +113,7 @@ def product_detail(request, product_id):
             'profile_user': profile_user,
             'wishlist': wishlist,
             'form': form,
+            'avg_rating' : avg_rating,
             
         }
 
@@ -184,7 +198,7 @@ def add_review(request, product_id):
                 review.profile_user = user
                 review.save()
                 messages.success(request, 'Your review was successful')
-                print(review)
+                print(review.rating)
                 return redirect(reverse('product_detail', args=[product.id]))
             else:
                 messages.error(
