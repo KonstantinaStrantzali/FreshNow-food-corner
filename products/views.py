@@ -84,6 +84,7 @@ def product_detail(request, product_id):
     }
         return render(request, template, context)
     else:
+        product = get_object_or_404(Product, pk=product_id)
         profile_user = get_object_or_404(UserProfile, user=request.user)
         # find a match to the product and user
         wishlist = Wishlist.objects.filter(
@@ -99,6 +100,7 @@ def product_detail(request, product_id):
             'profile_user': profile_user,
             'wishlist': wishlist,
             'form': form,
+            
         }
 
         return render(request, template, context)
@@ -182,12 +184,14 @@ def add_review(request, product_id):
                 review.profile_user = user
                 review.save()
                 messages.success(request, 'Your review was successful')
+                print(review)
                 return redirect(reverse('product_detail', args=[product.id]))
             else:
                 messages.error(
                     request, 'Failed to add your review')
     context = {
-        'form': form
+        'form': form,
+        
     }
 
     return render(request, context)

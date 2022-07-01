@@ -20,7 +20,6 @@ def wishlist(request):
     context = {
         'wishlist': wishlist,
     }
-    print(wishlist)
 
     return render(request, template, context)
 
