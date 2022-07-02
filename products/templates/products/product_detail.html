@@ -156,19 +156,14 @@
         {% endif %}
     </div>
 </div>
-<div class="row mb-3">
+<div class="row mb-3 text-light">
     <div class="col-12 col-md-10 col-lg-6 offset-lg-3 ">  
         <!-- Showing all product reviews-->
         {% for review in product.reviews_set.all %}
-            <div class="card review-container mt-5">
+            <div class="card review-container mt-5 ">
                 <!-- Edit Review Button-->
                 {% if review.user == request.user or request.user.is_superuser %}
-                    <div class="card-head text-right">
-                        
-                        <a class="" href="">
-                            Edit Review
-                        </a>
-                    </div>
+                    <div class="card-head text-right"></div>
                 {% endif %}
                 <div class="card-body">
                      <div class="row pr-0">
@@ -215,7 +210,7 @@
                                             <i class="far fa-star"></i>
                                         </small>
                                     </p>
-                                {% elif review.rating == 1.5 %}
+                                {% elif review.rating == 1 %}
                                     <p>
                                         <small class="text-warning">
                                             <i class="fas fa-star"></i>
@@ -227,20 +222,25 @@
                                     </p>
                                 {% else %}
                                     <p>
-                                        <small class="green-muted">
+                                        <small class="text-light">
                                             No Reviews
                                         </small>
                                     </p>
                                 {% endif %}
                             </div>
-                    <p class="text-dark">{{ review.review }}</p>
-                    <p class="small text-dark"> by {{ review.profile_user}} on {{ review.created_date|date:"d-m-Y"}}</p>    
-                   
+                    <p class="text-light">{{ review.review }}</p>
+                    <p class="small text-light"> by {{ review.profile_user}} on {{ review.created_date|date:"d-m-Y"}}</p>    
+                    <div class="text-center"
+                    <a class="text-left btn btn-light" href="">
+                        Edit Review
+                    </a>
+                    </div>
                 </div>
             </div>
+        </div>
         {% empty %}
             <div class="text-center mt-5">
-                <p>No reviews for this product, you can be the first...</p>
+                <p>No reviews for this product</p>
             </div>
         {% endfor%}
     </div>

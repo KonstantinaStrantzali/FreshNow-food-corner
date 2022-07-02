@@ -35,6 +35,10 @@ html {
 .heart-icon{
     font-size: 30px;
 }
+.review-container{
+    background-color: #E92500;
+    color: white;
+}
 
 .hero-container {
 	background: url('/media/background-image.avif') no-repeat center center fixed;
