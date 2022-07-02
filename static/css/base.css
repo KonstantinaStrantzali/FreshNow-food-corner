@@ -34,6 +34,7 @@ html {
 }
 .heart-icon{
     font-size: 30px;
+    color: #E92500;
 }
 .review-container{
     background-color: #E92500;
@@ -87,7 +88,8 @@ html {
 .top-nav{
     background-color: rgba(0, 0, 0, 0.486);
 }
-.order-button{
+.order-button,
+.product-button{
     background-color: #E92500;
     color:white;
 }
@@ -244,6 +246,10 @@ border: 5px solid #EEE; }
 
     .header-container {
         padding-top: 164px;
+    }
+    .heart-icon{
+        font-size: 30px;
+        color: #E92500;
     }
 }
 

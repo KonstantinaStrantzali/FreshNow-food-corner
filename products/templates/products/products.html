@@ -56,15 +56,15 @@
                                   <p class=""> <i class="fa-solid fa-weight-scale me-2"></i>{{ product.calories }} Cal </p>
                                   <div class="text-center">
                                   {% if product.rating %}
-                                    <small class="text-muted text-right"><i class="fas fa-star mr-5"></i>{{ product.rating }} / 5</small>
+                                    <small class="text-muted text-right"><i class="fas fa-star mr-5 me-2"></i>{{ product.rating }} / 5</small>
                                   {% else %}
                                     <small class="text-muted text-right">No Rating</small>
                                   {% endif %}
                                   {% if request.user.is_superuser %}
                                   <div>
-                                  <small class="ml-3">
-                                      <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                                      <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                  <small class="ml-4">
+                                      <a href="{% url 'edit_product' product.id %}" class="btn btn-sm product-button">Edit</a> | 
+                                      <a class="btn btn-sm product-button" href="{% url 'delete_product' product.id %}">Delete</a>
                                   </small>
                                   </div>
                               {% endif %}

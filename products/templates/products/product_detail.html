@@ -33,13 +33,13 @@
                     {% if wishlist %}
                     <span class="text-center">Remove from Wishlist: </span>
                     <a href="{% url 'delete_wishlist_item' product.id %}">
-                        <i class="text-danger fas fa-heart heart-icon"></i>
+                        <i class="fas fa-heart heart-icon"></i>
                     </a>
                     {% else %}
                     <span class="text-light">Add to Wishlist: </span>
                     <a class="wishlist_btn hvr-grow"
                         href="{% if user.is_authenticated %}{% url 'add_to_wishlist' product.id %}{% else %}{% url 'account_login' %}{% endif %}">
-                        <i class="far fa-heart heart-icon mt-3 text-danger"></i>
+                        <i class="far fa-heart heart-icon mt-3"></i>
                     </a>
                     {% endif %}
                 </p>
@@ -55,7 +55,7 @@
                     {% if product.rating %}
                     <p class="rating"><i class="fas fa-star mr-1"></i>{{ avg_rating }} / 5 </p>
                     {% else %}
-                    <p class="text-muted">No Rating</p>
+                    <p class="text-light">No Rating</p>
                     {% endif %}
                     {% if request.user.is_superuser %}
                     <small class="ml-3">
@@ -147,7 +147,7 @@
                     {% csrf_token %}
                     {{ form|crispy }}
                     <div class="text-right">
-                        <button class="btn btn-dark font-weight-bold" type="submit">Submit Review</button>
+                        <button class="btn order-button font-weight-bold" type="submit">Submit Review</button>
                     </div>
                 </form>
             {% endif %}
@@ -230,7 +230,7 @@
                             </div>
                     <p class="text-light">{{ review.review }}</p>
                     <p class="small text-light"> by {{ review.profile_user}} on {{ review.created_date|date:"d-m-Y"}}</p>    
-                    <div class="text-center"
+                    <div class="text-center">
                     <a class="text-left btn btn-light" href="">
                         Edit Review
                     </a>
