@@ -68,3 +68,7 @@ select option[value=""] {
     margin: 0;
     height: 100%;
 }
+
+.checkout-field{
+   background-color: #E92500;
+}

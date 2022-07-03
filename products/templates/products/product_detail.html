@@ -230,10 +230,12 @@
                             </div>
                     <p class="text-light">{{ review.review }}</p>
                     <p class="small text-light"> by {{ review.profile_user}} on {{ review.created_date|date:"d-m-Y"}}</p>    
+                    {% if request.user.is_authenticated %}
                     <div class="text-center">
                     <a class="text-left btn btn-light" href="">
                         Edit Review
                     </a>
+                    {%endif%}
                     </div>
                 </div>
             </div>

@@ -145,12 +145,13 @@ border: 5px solid #EEE; }
     list-style-type: none;
     }
 
-.logo{ 
-    color: white;
-    font-size: 30px;
-    padding: 5px;
-    transform: rotate(30deg); 
-    
+.logo { 
+   
+    width: 70px;
+    height: 72px;
+    position: fixed;
+    top:0; 
+	left:0;     
 }
 
 .hero-area{
