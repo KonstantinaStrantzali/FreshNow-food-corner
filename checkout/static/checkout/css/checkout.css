@@ -72,3 +72,11 @@ select option[value=""] {
 .checkout-field{
    background-color: #E92500;
 }
+
+.footer{ 
+position: relative;
+width: 100%;
+bottom: 0;
+z-index: 10;
+background-color: rgba(0, 0, 0, 0.486);
+}

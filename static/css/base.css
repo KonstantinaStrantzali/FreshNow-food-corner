@@ -22,16 +22,24 @@ html {
     scroll-behavior: smooth;
     
 }
+
+
+
 .body-area{
 
     background-color: rgb(27, 26, 26);
     font-size: 1rem;
     color:white;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     min-height: 100vh;
+    margin: 0;
    
  
   
 }
+
+
 .heart-icon{
     font-size: 30px;
     color: #E92500;
