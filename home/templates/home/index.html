@@ -6,24 +6,37 @@
 {% endblock %}
 
 
-
 {% block content %}
     <!-- Hero Section -->
+   
     <section class="container-fluid px-0">
+        
+    
         <div class="hero-container img-fluid">
-            <div class="loading-overlay">
+           
+           
             <div class="row h-100 mx-0">
-                <div class="col text-center">
-                    <h1 class="pt-4 hero-area">The taste of Fresh on your table!</h1>
+                <div class="loading-overlay">
+                
+                    <div class="col text-center">
+                        <marquee class="moving-text">
+                       Get a free smoothie for orders up to £40
+                       </marquee>
+                    </div>
+                   
+                <div class="col text-center hero-area">
+                    
+                    <h1 class="">The taste of Fresh on your table!</h1>
                 </div>
                 <div class="text-center">
                 <a class="btn order-button" href="{% url 'products' %}" role="button">Order Now</a>
-            
+                
                 </div>
             </div>
         </div>
         </div>
     </section>
+   
     <!-- Categories -->
     <section class="container-fluid">
         <div class="row">

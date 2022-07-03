@@ -164,7 +164,13 @@ border: 5px solid #EEE; }
 
 .hero-area{
     color:white;
-    margin-top:15%;
+    margin-top:5%;
+}
+
+.moving-text{
+    font-size: 20px;
+    color:white;
+    margin-top: 10%
 }
 /* Cards */
 
@@ -272,6 +278,11 @@ border: 5px solid #EEE; }
 .header-container{
     margin-top: 25%;
 }
+.moving-text{
+   
+    margin-top: 16%
+}
+
 }
 
 .form-user{
