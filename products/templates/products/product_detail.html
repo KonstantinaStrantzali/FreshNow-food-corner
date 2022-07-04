@@ -53,7 +53,7 @@
 
                     <p class="fs-5">£{{ product.price }}</p>
                     {% if product.rating %}
-                    <p class="rating"><i class="fas fa-star mr-1"></i>{{ avg_rating }} / 5 </p>
+                    <p class="rating"><i class="fas fa-star me-2"></i>{{ avg_rating }} / 5 </p>
                     {% else %}
                     <p class="text-light">No Rating</p>
                     {% endif %}
@@ -138,12 +138,12 @@
                     {% csrf_token %}
                     {{ form|crispy }}
                     <div class="text-right">
-                        <button class="btn btn-info font-weight-bold" type="submit">Update Review</button>
+                        <button class="btn order-button font-weight-bold" type="submit">Update Review</button>
                     </div>
                 </form>
             {% else %}
                 <!--Review Form -->
-                <form method="POST" action="{% url 'add_review' product.id %}#reviews">
+                <form method="POST" action="{% url 'add_review' product.id %}">
                     {% csrf_token %}
                     {{ form|crispy }}
                     <div class="text-right">
@@ -232,7 +232,7 @@
                     <p class="small text-light"> by {{ review.profile_user}} on {{ review.created_date|date:"d-m-Y"}}</p>    
                     {% if request.user.is_authenticated %}
                     <div class="text-center">
-                    <a class="text-left btn btn-light" href="">
+                    <a class="text-left btn btn-light" href="{% url 'edit_review' review.id %}">
                         Edit Review
                     </a>
                     {%endif%}

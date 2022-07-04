@@ -68,9 +68,24 @@
                         <p>{{ total | floatformat:2 }}</p>
                         <p class="my-0">£{{ delivery | floatformat:2 }}</p>
                         <p class="my-0"><strong>£{{ grand_total | floatformat:2 }}</strong></p>
+                        </div>
+                        {% if grand_total > 40 %}
+                        <div class="row text-right mt-5">
+                            <div class="col-2">
+                                <img class="w-100" src="{{ MEDIA_URL}}smoothie-from-mango_346278-704.webp" alt="{{ product.name }}">
+    
+                            </div>
+                            <div class="col-7">
+                    <p>FREE smoothie</p>
+                    </div>
+                {% else %}
+                 
+                {% endif %}
                     </div>
                 </div>
+                
             </div>
+            
             <div class="col-12 col-lg-6">
                 <p class="text-center">Please fill out the form below to complete your order</p>
                 <form action="{% url 'checkout' %}" method="POST" id="payment-form">

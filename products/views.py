@@ -216,14 +216,15 @@ def edit_review(request, review_id):
     A view to allow the users to edit their own review
     """
 
-    review = get_object_or_404(ProductReview, pk=review_id)
+    review = get_object_or_404(Reviews, pk=review_id)
+    print(review)
     product = review.product
 
     if request.method == 'POST':
         form = ReviewForm(request.POST, instance=review)
         if form.is_valid():
             form.save()
-            messages.info(request, 'Review has been changed')
+            messages.success(request, 'Review has been changed')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(

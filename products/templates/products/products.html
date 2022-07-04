@@ -55,11 +55,7 @@
                                   <p class="card-price fs-4">£{{ product.price }} </p>
                                   <p class=""> <i class="fa-solid fa-weight-scale me-2"></i>{{ product.calories }} Cal </p>
                                   <div class="text-center">
-                                  {% if product.rating %}
-                                    <small class="text-muted text-right"><i class="fas fa-star mr-5 me-2"></i>{{ product.rating }} / 5</small>
-                                  {% else %}
-                                    <small class="text-muted text-right">No Rating</small>
-                                  {% endif %}
+                                 
                                   {% if request.user.is_superuser %}
                                   <div>
                                   <small class="ml-4">
