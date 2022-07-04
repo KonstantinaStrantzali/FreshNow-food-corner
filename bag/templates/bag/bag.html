@@ -25,7 +25,7 @@
         {% if bag_items %}
         {% for item in bag_items %}
         <div class="row mb-5 justify-content-center">
-            <div class="col-12 col-md-7 col-lg-4">
+            <div class="col-12 col-md-7 col-lg-4 mt-4">
                 {% if item.product.image %}
                 <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                 {% else %}
@@ -96,7 +96,7 @@
                 </div>
             </div>
         </div>
-    </div>
+   </div>
     {% else %}
     <!-- Shopping Bag Empty -->
     <div class="text-center mt-3">
@@ -110,6 +110,7 @@
     </div>
     </div>
     </div>
+</div>
     {% endif %}
     {% endblock %}
 
