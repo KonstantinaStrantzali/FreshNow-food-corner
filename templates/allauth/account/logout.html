@@ -14,15 +14,15 @@
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
 
 {% block inner_content %}
-<h1 class="text-light text-center">{% trans "Sign Out" %}</h1>
+<h1 class="text-light text-center my-5">{% trans "Sign Out" %}</h1>
 
-<p class="text-light text-center">{% trans 'Are you sure you want to sign out?' %}</p>
+<p class="text-light text-center mb-5 ">{% trans 'Are you sure you want to sign out?' %}</p>
 
-<form method="post" action="{% url 'account_logout' %}" class="text-center">
+<form method="post" action="{% url 'account_logout' %}" class="text-center form-area">
   {% csrf_token %}
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
   {% endif %}
-  <button type="submit " class="btn order-button ">{% trans 'Sign Out' %}</button>
+  <button type="submit " class="btn order-button" style="width:40%; margin-left: 30%;">{% trans 'Sign Out' %}</button>
 </form>
 {% endblock %}

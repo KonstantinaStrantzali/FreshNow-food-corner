@@ -353,3 +353,13 @@ section#aboutSection .about-image img {
 .product-layout{
    background-color: #E92500;
 }
+
+.form-area {
+    display: grid;
+    grid-template-rows: auto 2fr auto;
+    min-height: 100vh;
+   
+}
+.signout {
+    width: 10%;
+}
