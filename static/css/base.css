@@ -347,9 +347,13 @@ section#aboutSection .about-image img {
     justify-content: center;
     border-radius: 0.25rem;
 }
+.logo{
+color: white;
 
-
-
+font-size: 30px;
+margin-top: 2%;
+transform: rotate(30deg);
+}
 .product-layout{
    background-color: #E92500;
 }
