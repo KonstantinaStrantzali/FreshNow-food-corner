@@ -96,7 +96,8 @@
                 </div>
             </div>
         </div>
-   </div>
+    </div>
+</div>
     {% else %}
     <!-- Shopping Bag Empty -->
     <div class="text-center mt-3">
@@ -110,15 +111,16 @@
     </div>
     </div>
     </div>
-</div>
-    {% endif %}
-    {% endblock %}
+    </div>
+   
+{% endif %}
+{% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
 
-<script type="text/javascript">
+<script>
     // Update quantity on click
     $('.update-link').click(function(e) {
         var form = $(this).prev('.update-form');

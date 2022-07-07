@@ -2,82 +2,96 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col mt-lg-0 mt-md-5 mt-sm-5">
-                <h1 class="text-center text-light">Products</h1>
+<div class="container header-container">
+    <div class="row">
+        <div class="col mt-lg-0 mt-md-5 mt-sm-5">
+            <h1 class="text-center text-light">Products</h1>
         </div>
     </div>
-{% endblock %}
+    {% endblock %}
 
-{% block content %}
+    {% block content %}
     <!-- Sort By -->
-   <div class="row mb-3">
-    <div class="col-sm-12 col-md-7 ml-lg-5">
-        <p class="text-light mt-3 text-left">
-            {% if search_term or current_categories or current_sorting != 'None_None' %}
+    <div class="row mb-3">
+        <div class="col-sm-12 col-md-7 ml-lg-5">
+            <p class="text-light mt-3 text-left">
+                {% if search_term or current_categories or current_sorting != 'None_None' %}
                 <span class="small"><a class="site-font text-light" href="{% url 'products' %}">Meals</a> | </span>
-            {% endif %}
-            {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
-        </p>
-    </div>
-    <div class="col-sm-12 col-md-6 col-lg-4 my-auto d-flex justify-content-center justify-content-md-end text-light">
-        <div class="sort-select-wrapper-sort-by">
+                {% endif %}
+                {{ products|length }} Products{% if search_term %} found for
+                <strong>"{{ search_term }}"</strong>{% endif %}
+            </p>
+        </div>
+        <div
+            class="col-sm-12 col-md-6 col-lg-4 my-auto d-flex justify-content-center justify-content-md-end text-light">
+            <div class="sort-select-wrapper-sort-by">
 
-            <select class="selectpicker" data-style="btn-light" name="sort-selector" id="sort-selector" >
-                <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
-                <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
-                <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
-                <option value="rating_asc" {% if current_sorting == 'review_asc' %}selected{% endif %}>Ratings (low to high)</option>
-                <option value="rating_desc" {% if current_sorting == 'review_desc' %}selected{% endif %}>Ratings (high to low)</option>
-                <option value="calories_asc" {% if current_sorting == 'calories_asc' %}selected{% endif %}>Calories (low-high)</option>
-                <option value="calories_desc" {% if current_sorting == 'calories_desc' %}selected{% endif %}>Calories (high- low)</option>
-               
-            </select>
+                <select class="selectpicker" data-style="btn-light" name="sort-selector" id="sort-selector">
+                    <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                    <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to
+                        high)</option>
+                    <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high
+                        to low)</option>
+                    <option value="rating_asc" {% if current_sorting == 'review_asc' %}selected{% endif %}>Ratings (low
+                        to high)</option>
+                    <option value="rating_desc" {% if current_sorting == 'review_desc' %}selected{% endif %}>Ratings
+                        (high to low)</option>
+                    <option value="calories_asc" {% if current_sorting == 'calories_asc' %}selected{% endif %}>Calories
+                        (low-high)</option>
+                    <option value="calories_desc" {% if current_sorting == 'calories_desc' %}selected{% endif %}>
+                        Calories (high- low)</option>
+                </select>
+            </div>
         </div>
     </div>
-</div>
     <div class="container-fluid mt-5">
         <div class="row">
             <div class="col text-center mt-3">
-                
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
                     {% for product in products %}
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-5">
-                            <div class="card h-100" style="width:auto;">
-                                {% if product.image %}
-                                <img class="card-img-top img-fluid" style="width:auto; height: 13rem;" src="{{ product.image.url }}" alt="{{ product.name }}">
-                                {% else %}
-                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                                {% endif %}
-                                <div class="card-body text-dark">
-                                  <h5 class="card-title">{{ product.name }} </h5>
-                                  <p class="card-price fs-4">£{{ product.price }} </p>
-                                  <p class=""> <i class="fa-solid fa-weight-scale me-2"></i>{{ product.calories }} Cal </p>
-                                  <div class="text-center">
-                                 
-                                  {% if request.user.is_superuser %}
-                                  <div>
-                                  <small class="ml-4">
-                                      <a href="{% url 'edit_product' product.id %}" class="btn btn-sm product-button">Edit</a> | 
-                                      <a class="btn btn-sm product-button" href="{% url 'delete_product' product.id %}">Delete</a>
-                                  </small>
-                                  </div>
-                              {% endif %}
-                                  </div>
-                                 </div>
-                                <div class="card-footer">
-                                    <a href="{% url 'product_detail' product.id %}" class="btn btn-lg order-button">More details</a>
-
-                                  </div>
-                              </div>
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-5">
+                        <div class="card h-100" style="width:auto;">
+                            {% if product.image %}
+                            <img class="card-img-top img-fluid" style="width:auto; height: 13rem;"
+                                src="{{ product.image.url }}" alt="{{ product.name }}">
+                            {% else %}
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
+                                alt="{{ product.name }}">
+                            {% endif %}
+                            <div class="card-body text-dark">
+                                <h5 class="card-title">{{ product.name }} </h5>
+                                <p class="card-price fs-4">£{{ product.price }} </p>
+                                <p class=""> <i class="fa-solid fa-weight-scale me-2"></i>{{ product.calories }} Cal
+                                </p>
+                                <div class="text-center">
+                                    {% if request.user.is_superuser %}
+                                    <div>
+                                        <small class="ml-4">
+                                            <a href="{% url 'edit_product' product.id %}"
+                                                class="btn btn-sm product-button">Edit</a> |
+                                            <a class="btn btn-sm product-button"
+                                                href="{% url 'delete_product' product.id %}">Delete</a>
+                                        </small>
+                                    </div>
+                                    {% endif %}
+                                </div>
                             </div>
-                        
+                            <div class="card-footer">
+                                <a href="{% url 'product_detail' product.id %}" class="btn btn-lg order-button">More
+                                    details</a>
+                            </div>
+                        </div>
+                    </div>
                     {% endfor %}
                 </div>
             </div>
         </div>
     </div>
+</div>
+<div class="btt-button">
+    <a class="btt-link d-flex h-100">
+        <i class="fas fa-arrow-up mx-auto my-auto"></i>
+    </a>
 </div>
 {% endblock %}
 
@@ -87,17 +101,17 @@
 		$('.btt-link').click(function(e) {
 			window.scrollTo(0,0)
 		})
-	
-    
-    
-        $('#sort-selector').change(function() {
-            var selector = $(this);
-            var currentUrl = new URL(window.location);
 
-            var selectedVal = selector.val();
+	 //Sort By Functionality
+
+        $('#sort-selector').change(function() {
+            let selector = $(this);
+            let currentUrl = new URL(window.location);
+
+            let selectedVal = selector.val();
             if(selectedVal != "reset"){
-                var sort = selectedVal.split("_")[0];
-                var direction = selectedVal.split("_")[1];
+                let sort = selectedVal.split("_")[0];
+                let direction = selectedVal.split("_")[1];
 
                 currentUrl.searchParams.set("sort", sort);
                 currentUrl.searchParams.set("direction", direction);
