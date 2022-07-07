@@ -2,82 +2,72 @@
 {% load static %}
 
 {% block extra_title %}
-    Home
+Home
 {% endblock %}
 
 
 {% block content %}
-    <!-- Hero Section -->
-   
-    <section class="container-fluid px-0">
-        
-    
-        <div class="hero-container img-fluid">
-           
-           
-            <div class="row h-100 mx-0">
-                <div class="loading-overlay">
-                
-                    <div class="col text-center">
-                        <marquee class="moving-text">
-                       Get a free smoothie for orders up to £40
-                       </marquee>
-                    </div>
-                   
+<!-- Hero Section -->
+
+<section class="container-fluid px-0">
+    <div class="hero-container img-fluid">
+        <div class="row h-100 mx-0">
+            <div class="loading-overlay">
+                <marquee class="moving-text text-cente">
+                    Get a free smoothie for orders up to £40
+                </marquee>
                 <div class="col text-center hero-area">
-                    
                     <h1 class="">The taste of Fresh on your table!</h1>
                 </div>
                 <div class="text-center">
-                <a class="btn order-button" href="{% url 'products' %}" role="button">Order Now</a>
-                
+                    <a class="btn order-button" href="{% url 'products' %}" role="button">Order Now</a>
                 </div>
             </div>
         </div>
-        </div>
-    </section>
-   
-    <!-- Categories -->
-    <section class="container-fluid">
-        <div class="row">
-            <div class="col-12 text-center my-3">
-                <h2 class="text-light">Categories</h2>
-            </div>
-        </div>
-            <div class="row pb-3 ml-4 mr-4 justify-content-center">
-                {% for c in category_list %}
-                    <div class="categories col-6 col-md-6 text-center ms-3 pb-3 mb-3">
-                        {% if c.image %}
-                            <a href="{% url 'products' %}?category={{ c.name }}">
-                                <img src="{{ c.image.url }}" alt="{{ c.friendly_name }}" class="img-responsive" height="170">
-                                <h5 class="categories-name pt-3 mb-0 pb-0">
-                                    {{ c.friendly_name }}
-                                </h5>
-                            </a>
-                        {% else %}
-                            <a href="{% url 'products' %}?category={{ c.name }}">
-                                <img src="{{ MEDIA_URL }}noimage.png" alt="{{ c.friendly_name }}" class="img-responsive" height="160">
-                                <h5 class="pt-3 mb-0 pb-0 green">
-                                    {{ c.friendly_name }}
-                                </h5>
-                            </a>
-                        {% endif %}
-                    </div>
-                {% endfor %}
-            </div>            
-    </section>
-    <div class="btt-button border-green green bg-cream">
-        <a class="btt-link d-flex h-100">
-            <i class="fas fa-arrow-up mx-auto my-auto"></i>
-        </a>
     </div>
+</section>
+
+<!-- Categories -->
+<section class="container-fluid">
+    <div class="row">
+        <div class="col-12 text-center my-3">
+            <h2 class="text-light">Categories</h2>
+        </div>
+    </div>
+    <div class="row pb-3 ml-4 mr-4 justify-content-center">
+        {% for c in category_list %}
+        <div class="categories col-6 col-md-6 text-center ms-3 pb-3 mb-3">
+            {% if c.image %}
+            <a href="{% url 'products' %}?category={{ c.name }}">
+                <img src="{{ c.image.url }}" alt="{{ c.friendly_name }}" class="img-responsive" height="170">
+                <h5 class="categories-name pt-3 mb-0 pb-0">
+                    {{ c.friendly_name }}
+                </h5>
+            </a>
+            {% else %}
+            <a href="{% url 'products' %}?category={{ c.name }}">
+                <img src="{{ MEDIA_URL }}noimage.png" alt="{{ c.friendly_name }}" class="img-responsive" height="160">
+                <h5 class="pt-3 mb-0 pb-0 green">
+                    {{ c.friendly_name }}
+                </h5>
+            </a>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<div class="btt-button border">
+    <a class="btt-link d-flex h-100">
+        <i class="fas fa-arrow-up mx-auto my-auto"></i>
+    </a>
+</div>
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    <script>
-        $('.btt-link').click(function(e) {
-            window.scrollTo(0,0);
-        });
-    </script>
+{{ block.super }}
+<script>
+    $('.btt-link').click(function (e) {
+        window.scrollTo(0, 0);
+    });
+</script>
 {% endblock %}

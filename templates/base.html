@@ -69,14 +69,14 @@
                                 <p class="text-right my-0">My Account</p>
                             </div>
                         </a>
-                        <div class="dropdown-menu border-0 bg-cream" aria-labelledby="user-options">
+                        <div class="dropdown-menu border-0 bg-cream" aria-labelledby="navbarDropdownMenuLink">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                                 <a href="" class="dropdown-item green">Add Category</a>
-                                    <a href="{% url 'add_product' %}" class="dropdown-item green">Add Product</a>
+                                    <a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a>
                                 {% endif %}
                                 <a href="{% url 'profile' %}" class="dropdown-item green">My Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item green">Logout</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                             {% else %}
                                 <a href="{% url 'account_signup' %}" class="dropdown-item green">Register</a>
                                 <a href="{% url 'account_login' %}" class="dropdown-item green">Login</a>
@@ -152,11 +152,8 @@
 
     {% block content %}
     {% endblock %}
-
-
     <footer>
-        <section class= "social-media-section">
-           <div class= "container-fluid">
+           <div class= "container-fluid social-media-section">
               <div class="row">
                  <div class="col-12 text-center mt-3">
                     <ul class="list-inline social-media-links">
@@ -171,7 +168,7 @@
                           </a>
                        </li>
                        <li class="list-inline-item">
-                        <a href="#" target="_blank" rel="noopener" aria-label="linkedin"></a>
+                        <a href="#" target="_blank" rel="noopener" aria-label="linkedin">
                         <i class="fab fa-linkedin fa-l" aria-hidden="true"></i>
             
                           </a>
@@ -185,7 +182,7 @@
                  </div>
               </div>
            </div>
-        </section>
+        
      </footer>
 
     {% block postloadjs %}
