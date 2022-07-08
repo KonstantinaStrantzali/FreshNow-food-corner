@@ -101,6 +101,7 @@ html {
     background-color: #E92500;
     color:white;
 }
+
 .red-background{
     background-color: #E92500;
     color:white;
@@ -109,6 +110,12 @@ html {
 .order-button:hover{
     background-color: #e92700c9;
     color:white;
+}
+.signout-button{
+   width:40%; 
+   margin-left: 30%;
+   background-color: #e92700c9;
+   color:white;
 }
 .selectpicker{
     color: white;
