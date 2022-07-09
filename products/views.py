@@ -1,7 +1,3 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
-from django.contrib import messages
-from django.db.models import Q
-from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
 from .models import Product, Category
 from .forms import ProductForm
@@ -14,6 +10,7 @@ from wishlist.models import Wishlist
 
 # Create your views here.
 
+
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
@@ -22,10 +19,9 @@ def all_products(request):
     categories = None
     sort = None
     direction = None
-    
 
     if request.GET:
-        
+
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
@@ -40,7 +36,7 @@ def all_products(request):
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
-            
+
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
@@ -49,10 +45,12 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(
+                    request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
-            
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+
+            queries = Q(name__icontains=query) | Q(
+                description__icontains=query)
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -61,7 +59,6 @@ def all_products(request):
     if request.user.is_authenticated:
         user = get_object_or_404(UserProfile, user=request.user)
         wishlist = Wishlist.objects.filter(profile_user=user)
-
 
     context = {
         'products': products,
@@ -73,6 +70,7 @@ def all_products(request):
 
     return render(request, 'products/products.html', context)
 
+
 def product_detail(request, product_id):
     """ A view to show individual product details """
 
@@ -82,7 +80,6 @@ def product_detail(request, product_id):
     if avg_rating is not None:
         # round to the nearest 0.5 value
         avg_rating = round(avg_rating * 2) / 2
-    
 
     if not request.user.is_authenticated:
         template = 'products/product_detail.html'
@@ -91,7 +88,7 @@ def product_detail(request, product_id):
             'product': product,
             'reviews': reviews,
             'avg_rating': avg_rating,
-    }
+            }
         return render(request, template, context)
     else:
         product = get_object_or_404(Product, pk=product_id)
@@ -99,25 +96,24 @@ def product_detail(request, product_id):
         # find a match to the product and user
         wishlist = Wishlist.objects.filter(
                    profile_user=profile_user, product=product_id)
-       
+
         form = ReviewForm()
         reviews = Reviews.objects.all().filter(product=product)
         avg_rating = reviews.aggregate(Avg('rating'))['rating__avg']
         product.rating = avg_rating
-    
+
         template = 'products/product_detail.html'
 
         context = {
-            
-            'product': product,
-            'profile_user': profile_user,
-            'wishlist': wishlist,
-            'form': form,
-            'avg_rating' : avg_rating,
-            
+           'product': product,
+           'profile_user': profile_user,
+           'wishlist': wishlist,
+           'form': form,
+           'avg_rating': avg_rating,
         }
 
         return render(request, template, context)
+
 
 @login_required
 def add_product(request):
@@ -132,16 +128,18 @@ def add_product(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(
+                request, 'Add product failed.Please ensure the form is valid.')
     else:
         form = ProductForm()
-        
+
     template = 'products/add_product.html'
     context = {
         'form': form,
     }
 
     return render(request, template, context)
+
 
 @login_required
 def edit_product(request, product_id):
@@ -156,7 +154,8 @@ def edit_product(request, product_id):
             messages.success(request, "Product successfully updated")
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+            messages.error(
+                request, 'Failed to update. Please ensure the form is valid.')
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
@@ -169,6 +168,7 @@ def edit_product(request, product_id):
 
     return render(request, template, context)
 
+
 @login_required
 def delete_product(request, product_id):
     if not request.user.is_superuser:
@@ -180,6 +180,7 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
 
 @login_required
 def add_review(request, product_id):
@@ -205,10 +206,10 @@ def add_review(request, product_id):
                     request, 'Failed to add your review')
     context = {
         'form': form,
-        
     }
 
     return render(request, context)
+
 
 @login_required
 def edit_review(request, review_id):
