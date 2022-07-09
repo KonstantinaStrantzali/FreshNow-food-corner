@@ -4,7 +4,6 @@ from products.models import Product
 
 
 class Reviews(models.Model):
-    
     RATING = [
         (1, '1'),
         (2, '2'),
@@ -20,6 +19,5 @@ class Reviews(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        
         return f'User: {self.profile_user} | Product: {self.product} | \
                     Rating: {self.rating}'

@@ -6,7 +6,7 @@ from django.shortcuts import render
 from profiles.models import UserProfile
 from products.models import Product
 from wishlist.models import Wishlist
-# Create your views here.
+
 
 @login_required
 def wishlist(request):
@@ -38,19 +38,18 @@ def add_to_wishlist(request, product_id):
 
     return redirect(reverse('product_detail', args=[product.id]))
 
+
 @login_required
 def delete_wishlist_item(request, product_id):
 
     user = get_object_or_404(UserProfile, user=request.user)
-   
+
     product = get_object_or_404(Product, pk=product_id)
-    
+
     Wishlist.objects.filter(product=product, profile_user=user).delete()
 
     messages.info(request,
                   f'{product.name} has been removed from your Wishlist!')
 
     return redirect(reverse('product_detail', args=[product.id]))
-
-
 

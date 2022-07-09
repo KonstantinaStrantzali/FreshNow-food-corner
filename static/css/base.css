@@ -330,6 +330,12 @@ border: 5px solid #EEE; }
     font-size: 1.4rem;
 }
 
+.contact-link:link, 
+.contact-link:visited {
+    color: #F6F6F6;
+    text-decoration: none;
+}
+
 .form-user input,
 .form-user select,
 .form-user .form-control {
