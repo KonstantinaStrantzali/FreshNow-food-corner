@@ -5,20 +5,20 @@ from products.models import Product
 
 # Create your views here.
 
+
 def view_bag(request):
     """ A view that renders the bag contents page """
 
     return render(request, 'bag/bag.html')
-    
+
 
 def add_to_bag(request, item_id):
     """ Add a quantity of the specified product to the shopping bag """
 
     product = Product.objects.get(pk=item_id)
     quantity = int(request.POST.get('quantity'))
-    
+
     redirect_url = request.POST.get('redirect_url')
-    
 
     spicy = None
     if 'product_spicy' in request.POST:
@@ -29,17 +29,21 @@ def add_to_bag(request, item_id):
         if item_id in list(bag.keys()):
             if spicy in bag[item_id]['spicy_level'].keys():
                 bag[item_id]['spicy_level'][spicy] += quantity
-                messages.success(request, f'Updated spicy level {spicy.upper()} {product.name} quantity to {bag[item_id]["spicy_level"][spicy]}')
+                messages.success
+                (request, f'Updated spicy level {spicy.upper()} {product.name}')
             else:
                 bag[item_id]['spicy_level'][spicy] = quantity
-                messages.success(request, f'Added spicy {spicy.upper()} {product.name} to your bag')
+                messages.success(
+                    request, f'Added spicy {spicy.upper()} in {product.name}')
         else:
             bag[item_id] = {'spicy_level': {spicy: quantity}}
-            messages.success(request, f'Added spice {spicy.upper()} {product.name} to your bag')
+            messages.success(
+                request, f'Added spicy {spicy.upper()} in {product.name}')
     else:
         if item_id in list(bag.keys()):
             bag[item_id] += quantity
-            messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}')
+            messages.success(
+                request, f'Updated {product.name} quantity to {bag[item_id]}')
         else:
             bag[item_id] = quantity
             messages.success(request, f'Added {product.name} to your bag')
@@ -47,7 +51,6 @@ def add_to_bag(request, item_id):
     request.session['bag'] = bag
 
     return redirect(reverse('view_bag'))
-    
 
 
 def adjust_bag(request, item_id):
