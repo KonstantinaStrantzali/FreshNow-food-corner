@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Category(models.Model):
-    
+
     class Meta:
         verbose_name_plural = 'Categories'
 
@@ -15,7 +15,6 @@ class Category(models.Model):
 
     def get_friendly_name(self):
         return self.friendly_name
-
 
 
 class Product(models.Model):
@@ -31,6 +30,6 @@ class Product(models.Model):
     calories = models.DecimalField(
         max_digits=6, null=True, blank=True, decimal_places=0)
     is_spicy = models.BooleanField(default=False, null=True, blank=True)
-    
+
     def __str__(self):
         return self.name

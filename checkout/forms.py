@@ -27,7 +27,6 @@ class OrderForm(forms.ModelForm):
             'county': 'County, State or Locality',
         }
 
-        
         for field in self.fields:
             if field != 'country':
                 if self.fields[field].required:
