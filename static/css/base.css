@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,500&display=swap');
+
 :root{
     --main-color: white;
     --btn-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
@@ -28,6 +30,7 @@ html {
 .body-area{
 
     background-color: rgb(27, 26, 26);
+    font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
     color:white;
     display: grid;
@@ -38,7 +41,9 @@ html {
  
   
 }
-
+.welcome-heading {
+    font-weight: 500;
+}
 
 .heart-icon{
     font-size: 30px;
