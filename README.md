@@ -236,3 +236,11 @@ The navigation bar changes depending on user status and screen size:
 | My Account dropdown - Add Product | &#10060; | &#10060; | &#9989; |
 | Wishlist | &#10060; | &#9989; | &#9989; |
 | Shopping Basket Icon | &#9989; | &#9989; | &#9989; |
+
+### Database Design
+The diagram below illustrates the database structure used in this project.
+![Database Schema](freshNow_store/documentation/database.png)
+
+[Back to Top](#)
+
+---
