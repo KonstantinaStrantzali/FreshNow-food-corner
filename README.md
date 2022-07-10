@@ -125,4 +125,78 @@ Although the project relied on the wireframes below, there are some differences 
 * [Order Success](documentation/wireframes/order_success.png)---
 * [Add Products](documentation/wireframes/add_product.png)---
 
+## Features
+
+* Home
+  * Hero Image
+  * List of Categories that lead to the Categorized Products when clicked
+  * ![Home](documentation/screenshots/home.png)
+
+* Navigation Bar
+  * ![Navigarion Bar](documentation/screenshots/navbar.png)
+
+* Footer
+  * ![Footer](documentation/screenshots/footer.png)
+
+* About Us
+
+  * ![Gallery](documentation/screenshots/gallery.png)
+
+* View a List of Products
+  * Sort the List of Products by:
+    * _Calories_ (low - high / high - low)
+    * _Price_ (low - high / high - low)
+    * _Ratings_ (low - high / high - low)
+    * ![Sort By Name In Category](documentation/screenshots/sort-by-price.png)
+
+* Search Bar
+  * Sort by meal name:
+    * ![Sort By Meal Name](documentation/screenshots/sort-by-name-in-category.png)
+
+* View product Details
+  
+
+* Add Products to Shopping Cart
+ * ![Product Details](documentation/screenshots/add-products.png)
+
+* Update quantity and delete Products from Shopping Cart
+  * ![Update, Delete Products from Cart](documentation/screenshots/add-update-delete-cart.png)
+
+* Make purchases of the products in the Shopping Cart
+  * If the payment fails, the user is directed back to the checkout form and is shown a message that the payment failed.
+  * If the payment succeeds, the user gets a success message and redirects to a page containing all the order details.
+  * Ability for a registered user to save their details after making a purchase.
+  * ![Checkout Fail and Success](documentation/screenshots/checkout-success.png)
+
+* Profile
+  * Update Profile
+  * User's order history is saved on their profile.
+  * ![Update Profile and Order History](documentation/screenshots/update-profile.png)
+
+* Register/Sign In
+* Sign Out
+* Email Verification
+  * ![Register, Sign In, Sign Out, Verify Email](documentation/screenshots/account.png)
+
+* Wishlist (for the logged in user)
+  * Add or remove items from the Wishlist
+  * Display wishlisted items with a red heart on Wishlist page
+  * ![Wishlist](documentation/screenshots/add-to-wishlist.png)
+
+* Diplay of Reviews with Username and the Date it was added, for each Product 
+* Submit Reviews (for the logged in user)
+* Edit Review
+  * ![Reviews](documentation/screenshots/reviews.png)
+
+
+* Store owner has the ability to add / edit and delete Products
+  * ![Update, Delete](documentation/screenshots/add-product.png)
+  * ![Add Product](documentation/screenshots/add-product.png)
+
+
+* 404 Page Not Found
+* 500 Internal Server Error
+  * ![404 Page Not Found](documentation/screenshots/iphone375/error404.png)
+
+---
 
