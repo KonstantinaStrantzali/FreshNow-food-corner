@@ -130,67 +130,73 @@ Although the project relied on the wireframes below, there are some differences 
 * Home
   * Hero Image
   * List of Categories that lead to the Categorized Products when clicked
-  * ![Home](documentation/screenshots/home.png)
+  * ![Home](/freshNow_store/documentation/screenshots/home-feature.png)
 
 * Navigation Bar
-  * ![Navigarion Bar](documentation/screenshots/navbar.png)
+  * ![Navigarion Bar](/freshNow_store/documentation/screenshots/navigation-bar.png)
 
 * Footer
-  * ![Footer](documentation/screenshots/footer.png)
+  * ![Footer](/freshNow_store/documentation/screenshots/footer.png)
 
 * About Us
-
-  * ![Gallery](documentation/screenshots/gallery.png)
+  * ![About Us](/freshNow_store/documentation/screenshots/about-us.png)
 
 * View a List of Products
   * Sort the List of Products by:
     * _Calories_ (low - high / high - low)
     * _Price_ (low - high / high - low)
     * _Ratings_ (low - high / high - low)
-    * ![Sort By Name In Category](documentation/screenshots/sort-by-price.png)
+    * ![Sort By Name In Category](/freshNow_store/documentation/screenshots/sort.png)
 
 * Search Bar
   * Sort by meal name:
-    * ![Sort By Meal Name](documentation/screenshots/sort-by-name-in-category.png)
+    * ![Sort By Meal Name](/freshNow_store/documentation/screenshots/search-bar.png)
 
 * View product Details
+  * ![Product details](/freshNow_store/documentation/screenshots/product-details.png)
   
 
 * Add Products to Shopping Cart
- * ![Product Details](documentation/screenshots/add-products.png)
+ * ![Product Details](/freshNow_store/documentation/screenshots/add-products.png)
 
 * Update quantity and delete Products from Shopping Cart
-  * ![Update, Delete Products from Cart](documentation/screenshots/add-update-delete-cart.png)
+  * ![Update, Delete Products from Cart](/freshNow_store/documentation/screenshots/update-delete-product.png)
 
 * Make purchases of the products in the Shopping Cart
   * If the payment fails, the user is directed back to the checkout form and is shown a message that the payment failed.
   * If the payment succeeds, the user gets a success message and redirects to a page containing all the order details.
   * Ability for a registered user to save their details after making a purchase.
-  * ![Checkout Fail and Success](documentation/screenshots/checkout-success.png)
+  * ![Checkout](/freshNow_store/documentation/screenshots/checkout.png)
+
+  * ![Checkout Success](/freshNow_store/documentation/screenshots/success-checkout.png)
 
 * Profile
   * Update Profile
   * User's order history is saved on their profile.
-  * ![Update Profile and Order History](documentation/screenshots/update-profile.png)
+  * ![Update Profile and Order History](/freshNow_store/documentation/screenshots/user-profile.png)
 
 * Register/Sign In
 * Sign Out
 * Email Verification
-  * ![Register, Sign In, Sign Out, Verify Email](documentation/screenshots/account.png)
+  * ![Register, Sign In, Sign Out, Verify Email](/freshNow_store/documentation/screenshots/register-account.png)
 
 * Wishlist (for the logged in user)
   * Add or remove items from the Wishlist
   * Display wishlisted items with a red heart on Wishlist page
-  * ![Wishlist](documentation/screenshots/add-to-wishlist.png)
+  * ![Wishlist](/freshNow_store/documentation/screenshots/add-wishlist.png)
+
+  * ![Wishlist](/freshNow_store/documentation/screenshots/wishlist.png)
 
 * Diplay of Reviews with Username and the Date it was added, for each Product 
 * Submit Reviews (for the logged in user)
 * Edit Review
-  * ![Reviews](documentation/screenshots/reviews.png)
+  * ![ Edit Review](/freshNow_store/documentation/screenshots/review.png)
+
+  * ![ Submit Review](/freshNow_store/documentation/screenshots/submit-review.png)
 
 
 * Store owner has the ability to add / edit and delete Products
-  * ![Update, Delete](documentation/screenshots/add-product.png)
+  * ![Update, Delete](documentation/screenshots/update-delete-product.png)
   * ![Add Product](documentation/screenshots/add-product.png)
 
 
@@ -200,3 +206,33 @@ Although the project relied on the wireframes below, there are some differences 
 
 ---
 
+
+### Future Features
+
+[.....]
+* Contact Page
+
+[Back to Top](#la-fraschetta)
+
+## **Information Architecture**
+
+### Navigation bar
+
+The navigation bar changes depending on user status and screen size:
+
+| Nav Link | Logged Out | Logged In (User) | Logged In (Admin) |
+|-------|-----|-----|-----|
+| Logo (small screen) | &#10060; | &#10060; | &#10060; |
+| Logo (large screen) | &#9989; | &#9989; | &#9989; |
+| Home | &#9989; | &#9989; | &#9989; |
+|Dropdown list of meals categories | &#9989; | &#9989; | &#9989; |
+| About Us | &#9989; | &#9989; | &#9989; |
+| Search Bar | &#9989; | &#9989; | &#9989; |
+| My Account | &#9989; | &#9989; | &#9989; |
+| My Account dropdown - Login | &#9989; | &#10060; | &#10060; |
+| My Account dropdown - Register | &#9989; | &#10060; | &#10060; |
+| My Account dropdown - Profile | &#10060; | &#9989; | &#9989; |
+| My Account dropdown - Log Out | &#10060; | &#9989; | &#9989; |
+| My Account dropdown - Add Product | &#10060; | &#10060; | &#9989; |
+| Wishlist | &#10060; | &#9989; | &#9989; |
+| Shopping Basket Icon | &#9989; | &#9989; | &#9989; |
