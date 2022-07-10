@@ -8,7 +8,7 @@
 
 <div align ="center">
 
-![Final project image home page](static/documentation/responsive_layout.png)
+![Final project image home page](freshNow_store/documentation/responsive_layout.png)
 
 </div>
 
@@ -89,3 +89,40 @@ FreshNow is a full-stack site based around a business logic used to control a ce
 * As a creator, I want the site to be easy to navigate.
 * As a creator, I want to allow users to filter through products.
 * As a creator, I want to allows admins to Add/Edit/Delete products to/from the store.
+
+## **Design**
+
+### Colour Scheme
+* The website uses the colours found...
+  * [Colour Palette - Coolers.co](https://coolors.co/0f5520-fffaea-990b16-6c9c79)
+  ![Colour Palette](/freshNow_store/documentation/FreshNow%20Color%20Palette.png)
+
+### Typography
+
+* The website uses two fonts from [Google Fonts](https://fonts.google.com/?query=Suwannaphum).
+  [....]
+
+### Imagery
+
+* The icons of the site were taken from font-awesome and used in logo and cards for styling, emphasizing the costumed fields and impoving the site's readability.
+* All the images used for the site's products were taken from Unsplash which offers royalty free images. 
+* The Home page image which gives a nice and visually appealing background have been taken from Unsplash and aims to show the products in an irresistible manner. 
+* The About Us page image was taken from Usplash and aims to give the user intuitive information about the restaurant. 
+
+### Wireframes
+Although the project relied on the wireframes below, there are some differences between the them and the final wedsite due to change of mind for different/better UI and functionality. The wireframes show the desktop, mobile and tablet for view for this project:
+
+* [Home](documentation/wireframes/home.png)
+* [About Us](documentation/wireframes/our_story.png)---
+* [Sign Up](documentation/wireframes/register-wireframe.png)
+* [Log In](documentation/wireframes/signin-wireframe.png)
+* [My Profile](documentation/wireframes/profile.png)----
+* [Wishlist](documentation/wireframes/wishlist-wireframe.png)
+* [Products Detail](documentation/wireframes/product-details-wireframe.png)
+* [Product and Reviews](documentation/wireframes/product_and_reviews.png)----
+* [Shopping Cart](documentation/wireframes/shopping-bag-wireframe.png)
+* [Checkout](documentation/wireframes/checkout-wireframes.png)
+* [Order Success](documentation/wireframes/order_success.png)---
+* [Add Products](documentation/wireframes/add_product.png)---
+
+
