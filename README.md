@@ -244,3 +244,51 @@ The diagram below illustrates the database structure used in this project.
 [Back to Top](#)
 
 ---
+
+## **Technologies Used**
+
+### Languages Used
+
+* [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+* [CSS3](https://developer.mozilla.org/en-US/docs/Archive/CSS3#:~:text=CSS3%20is%20the%20latest%20evolution,flexible%20box%20or%20grid%20layouts.)
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [Python](https://www.python.org/)
+
+### Site Design
+
+* [Font Awesome](https://fontawesome.com/) was used for site's icons.
+* [Coolers.co](https://coolors.co/a71313-3c3cdf-0f0f0f-ffffff-198754-ffca02) was used for the colour palette of the site.
+* [Google Fonts](https://fonts.google.com/) was used to import the _Open Sans_ and _Dancing Script_ font in the site.
+
+
+### Hosting
+* [GitHub](https://github.com/) stores the code for this project after being pushed from Git.
+* [Heroku](https://www.heroku.com) deploys the live site.
+
+### Databases Platform and Cloud Storage
+* [SQlite](https://www.sqlite.org/index.html) is the default SQL database engine which is provided by Django and used during development.
+* [Heroku Postgres](https://devcenter.heroku.com/articles/heroku-postgresql) is the SQL database service provided by Heroku to store the site's data.
+* [Amazon AWS S3](https://s3.console.aws.amazon.com/s3) was used for images hosting and static files.
+
+### Frameworks and Libraries 
+
+* [Django](https://www.djangoproject.com/) was used as a Python web framework.
+* [pip](https://pip.pypa.io/en/stable/) was used to install the required dependencies for this site.
+* [Django-countries](https://pypi.org/project/django-countries/) was used for its pre-built country field containing all the valid country codes.
+* [Crispy forms](https://django-crispy-forms.readthedocs.io/en/latest/) was used to manage rendering behaviour and layout of Django forms.
+* [Gunicorn](https://gunicorn.org/) was used for WSGI HTTP Server to support deployment of Django application.
+* [Jinja](https://jinja.palletsprojects.com/en/3.0.x/) was used to auto-populate the site with the contents of the database.
+* [Stripe.js](https://stripe.com/docs/js) library was used for handling Stripe payment objects.
+* [Bootstrap](https://getbootstrap.com/) was used for the responsive layout of the website.
+* [jQuery](https://jquery.com/) was used to make the DOM traversal easier within the JavaScript.
+
+### Other Technologies
+
+* [Git](https://git-scm.com/) was used for version control by utilizing the Gitpod terminal to add and commit to Git and push to GitHub.
+* [drawSQL](https://drawsql.app/) was used to design the graph of the relational database.
+* [Balsamiq](https://balsamiq.com/) was used to create the wireframes for the initial idea of the project.
+* [Am I Responsive Design](http://ami.responsivedesign.is/) was used for the screenshot in this repository's README.md and TESTING.md.
+* [Google DevTools](https://developer.chrome.com/docs/devtools/) was used as a general debugger.
+* [Lighthouse](https://developers.google.com/web/tools/lighthouse/) was used to check the site's Performance, Accessibility, Best Practices, and SEO.
+* [Tinyjpg.com](https://tinyjpg.com/) was used to compress the images.
+* [Gitpod](https://gitpod.io/) was used as a virtual IDE workspace to build this site.
