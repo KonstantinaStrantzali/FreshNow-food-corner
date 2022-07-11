@@ -88,7 +88,7 @@
                                     <div class="input-group">
                                         <div class="input-group-prepend ms-4">
                                             <button class="decrement-qty btn btn-dark btn-quantity rounded-0"
-                                                data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
+                                                data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}" aria-label="decrement-qty">
                                                 <span class="icon">
                                                     <i class="fas fa-minus"></i>
                                                 </span></button>
@@ -98,7 +98,7 @@
                                             id="id_qty_{{ product.id }}">
                                         <div class="input-group-append">
                                             <button class="increment-qty btn btn-dark  rounded-0"
-                                                data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                                data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }" aria-label="increment-qty"}>
                                                 <span class="icon">
                                                     <i class="fas fa-plus"></i>
                                                 </span>
@@ -136,7 +136,7 @@
                     {% csrf_token %}
                     {{ form|crispy }}
                     <div class="text-right">
-                        <button class="btn order-button font-weight-bold" type="submit">Update Review</button>
+                        <button class="btn order-button font-weight-bold" type="submit" aria-label="submit">Update Review</button>
                     </div>
                 </form>
             {% else %}
@@ -145,7 +145,7 @@
                     {% csrf_token %}
                     {{ form|crispy }}
                     <div class="text-right">
-                        <button class="btn order-button font-weight-bold" type="submit">Submit Review</button>
+                        <button class="btn order-button font-weight-bold" type="submit" aria-label="submit">Submit Review</button>
                     </div>
                 </form>
             {% endif %}

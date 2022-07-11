@@ -13,7 +13,7 @@
                 content="Fresh, meals, salad, food, smoothie, pasta, healthy, delivery">
         <meta name="author" content="Konstantina Strantzali">
             <!-- Favicon -->
-        <link rel="icon" type="image/x-icon" sizes="192x192" href="{% static 'media/favicon.png' %}">
+        <link rel="icon" type="image/x-icon" sizes="192x192" href="{% static '/favicon.png' %}">
     {% endblock %}
 
     {% block extra_meta %}
@@ -214,14 +214,7 @@ bsToast.show();
 })
     </script>
     
-    <script>
-        function copyright() {
-            let date = new Date();
-            let year = date.getFullYear();
-            document.getElementById("copyright").innerHTML = year;
-        }
-        copyright();
-    </script>
+  
     {% endblock %}
     
   </body>
