@@ -273,6 +273,30 @@ The diagram below illustrates the database structure used in this project.
 ### Frameworks and Libraries 
 
 * [Django](https://www.djangoproject.com/) was used as a Python web framework.
+
+  - asgiref==3.5.2
+  - boto3==1.24.12
+  - botocore==1.27.12
+  - crispy-bootstrap5==0.6
+  - dj-database-url==0.5.0
+  - Django==3.2
+  - django-allauth==0.51.0
+  - django-countries==7.3.2
+  - django-crispy-forms==1.14.0
+  - django-storages==1.12.3
+  - gunicorn==20.1.0
+  - jmespath==1.0.1
+  - oauthlib==3.2.0
+  - Pillow==9.1.1
+  - psycopg2-binary==2.9.3
+  - PyJWT==2.4.0
+  - python3-openid==3.2.0
+pytz==2022.1
+requests-oauthlib==1.3.1
+s3transfer==0.6.0
+sqlparse==0.4.2
+stripe==3.4.0
+
 * [pip](https://pip.pypa.io/en/stable/) was used to install the required dependencies for this site.
 * [Django-countries](https://pypi.org/project/django-countries/) was used for its pre-built country field containing all the valid country codes.
 * [Crispy forms](https://django-crispy-forms.readthedocs.io/en/latest/) was used to manage rendering behaviour and layout of Django forms.
@@ -292,3 +316,213 @@ The diagram below illustrates the database structure used in this project.
 * [Lighthouse](https://developers.google.com/web/tools/lighthouse/) was used to check the site's Performance, Accessibility, Best Practices, and SEO.
 * [Tinyjpg.com](https://tinyjpg.com/) was used to compress the images.
 * [Gitpod](https://gitpod.io/) was used as a virtual IDE workspace to build this site.
+
+### Testing
+
+* [W3C Markup Validation Service](https://validator.w3.org/) tests the HTML validation.
+* [W3C CSS Validation Service](http://jigsaw.w3.org/css-validator/) tests the CSS validation.
+* [JSHint](https://jshint.com/) tests JavaScript validation.
+* [PEP8](http://pep8online.com/) was used to validate the python syntax.
+
+
+[Back to Top](#la-fraschetta)
+
+---
+
+## **Deployment**
+
+### Requirements for Deployment
+
+* An IDE (such as GitPod or VSCode)
+* Git, for version control
+* GitHub account
+* Python3
+* pip, for Python package installation
+* Heroku account
+* AWS S3 account
+* Stripe account
+* Email account
+
+#### The are two stages for the deployment of this projects:
+### 1. Initial Deployment 
+
+* First step includes Heroku app creation, connection with Postgres database and app deployment without static files.
+
+* Gitpod Local environment
+  | KEY         | VALUE |
+  | ----------- | ----------- |
+  | DEVELOPMENT | True |
+    
+* Create an env.py file in gitpod
+
+    ```
+  import os
+
+  os.environ["SECRET_KEY"] = "#YOUR_SECRET_KEY#"
+  os.environ["STRIPE_PUBLIC_KEY"] = "#YOUR_STRIPE_PUBLIC_KEY#"
+  os.environ["STRIPE_SECRET_KEY"] = "#YOUR_STRIPE_SECRET_KEY#"
+  os.environ["DATABASE_URL"] = "#YOUR_DATABASE_URL#"
+  os.environ["STRIPE_WH_SECRET"] = "#YOUR_STRIPE_WH_SECRET#"
+  os.environ["AWS_SECRET_ACCESS_KEY"] = "#YOUR_AWS_SECRET_ACCESS_KEY#"
+  os.environ["AWS_ACCESS_KEY_ID"] = "#YOUR_AWS_ACCESS_KEY_ID#"
+  os.environ["USE_AWS"] = True
+  os.environ["EMAIL_HOST_PASS"] = "#YOUR_EMAIL_APP_PASS_CODE#"
+  os.environ["EMAIL_HOST_USER"] = "#YOUR_EMAIL_ADDRESS#"
+
+* For the successful deployment of this application on Heroku, the dependencies and running files need to clearly defiend in advance, so Heroku now what is needed to be used. 
+
+  * Creation of requirements file: in the terminal type the following command:
+    * `pip3 freeze --local > requirements.txt`
+    * This file will hold a list of all dependencies required for this project.
+  * Creation of a procfile: in the terminal type the following command:
+    * `echo web: python run.py > Procfile` 
+    * Make sure there is no blank line after the contents of this file.
+* Commit and push these changes to GitHub.
+* Login or sign up to [Heroku](https://www.heroku.com).
+* Select '**Create New App**' in the top right of your dashboard.
+* Choose a unique app name, and select the region closest to you, then click '**Create App**'.
+* Go to the '**Deploy**' tab, find '**Deployment Method**', and select '**GitHub**'.
+* Find your GitHub repository, and click '**Connect**'.
+* Navigate to the '**Settings**' tab and click '**Reveal Config Vars**'.
+* Enter key-value pairs that match those in your project files for the keys below:
+  | KEY                   | VALUE                   |
+  | --------------------- | ----------------------- |
+    SECRET_KEY            | YOUR_SECRET_KEY
+    STRIPE_PUBLIC_KEY     | YOUR_STRIPE_PUBLIC_KEY
+    STRIPE_SECRET_KEY     | YOUR_STRIPE_SECRET_KEY
+    DATABASE_URL          | YOUR_DATABASE_URL
+    STRIPE_WH_SECRET      | YOUR_STRIPE_WH_SECRET
+    AWS_SECRET_ACCESS_KEY | YOUR_AWS_SECRET_ACCESS_KEY
+    AWS_ACCESS_KEY_ID     | YOUR_AWS_ACCESS_KEY_ID
+    USE_AWS               | YOUR_USE_AWS
+    EMAIL_HOST_PASS       | YOUR_EMAIL_HOST_PASS
+    EMAIL_HOST_USER       | YOUR_EMAIL_HOST_USER
+    DISABLE_COLLECTSTATIC | 1 (Add this variable temporarily)
+
+* Navigate to the '**Resources**' tab in Heorku, and add on '**Heroku Postgres**' with the free plan.
+* Current sqlite database back up:
+  * This database was initially designed without fixtures, so make sure manage.py file is connected to mysql database.
+  * Backup the current database for each of desired model and load it into a db.json file: 
+  `python3 manage.py dumpdata your_model_name > db.json`
+  * Same action need to repeat for each model you wish to transfer to the postgres database. 
+  * Data loading from db.json file into postgres:
+  * Creation of temporary variable in the environement named: DATABASE_URL with the value of the Postgres URL from Heroku
+  * Packages installation and freeze the requirements:
+    * `pip3 install dj_database_url`
+    * `pip3 install psycopg2-binary`
+    * `pip3 freeze > requirements.txt`
+  * In freshNow_Store > settings.py, add `import dj_database_url` at top of the page
+  * Connect your manage.py file to your postgres database  
+    ```
+    DATABASES = {
+    'default':  dj_database_url.parse('DATABASE_URL')
+    }
+    ```
+  * Data loading from the db.json file into postgres:
+  * `python3 manage.py loaddata <your_file>.json`
+  * 
+  * Make migrations to start using PostgreSQL:
+  * `python3 manage.py makemigrations`
+  * `python3 manage.py migrate`
+  * Superuser creation to access the Django admin panel: 
+  * `python3 manage.py createsuperuser`
+  * Username and password addition in the terminal
+  * Heroku CLI installation and login:
+  * `heroku login` or `heroku login -i`
+  * `DISABLE_COLLECTSTATIC = 1` removal from your heroku config vars.
+  * Commit and push changes to GitHub.
+  * In settings.py file add the hostname of your Heroku app to '**ALLOWED HOSTS**'.
+  * Navigate to the '**Deploy**' tab on your Heroku apps Dashboard, and click on '**Enable Automatic Deployment**'.
+  * Click open app to view the application in your browser, your app should be displayed without any images and static files.
+
+### 2. Amazon AWS
+1. Create an Amazon AWS account
+
+#### S3 Bucket:
+2. Search for S3 and create a new bucket
+    - Give it a name, choose the region closest to you and allow public access,
+3. Under Properties > Static website hosting
+    - Enable
+    - index.html as index.html
+    - save
+4. Go to Under Permissions > CORS use the following:
+```
+[
+  {
+      "AllowedHeaders": [
+          "Authorization"
+      ],
+      "AllowedMethods": [
+          "GET"
+      ],
+      "AllowedOrigins": [
+          "*"
+      ],
+      "ExposeHeaders": []
+  }
+]
+```
+
+5. Under Permissions > Bucket Policy:
+  * _Type of Policy: 'S3 Bucket Policy'_
+  * _Principal: '*' to allow all principles_
+  * _Action: 'Get Object'_
+  * _Amazon Resource Name (ARN): Paste your Bucket ARN and add * at the and of your Bucket Resource key arn:aws:s3:::bucket_name/_ 
+  * Click 'Save'
+  * Go to the 'Access Control List', Set the list of objects permission for everyone under the 'Public Access' section.
+
+#### IAM
+* Click on the 'Services' tab on the top left of the page and search for 'IAM'.
+* Go to '**User Groups**', '**Create New Group**', enter a name, and click '**Create**'.
+* Go to '**Policies**', '**Create New Policy**', '**JSON**', '**Import Managed Policy**', '**S3**', '**AmazonS3FullAccess**', '**Import**'.
+* Get your ARN from '**S3 Permissions**', delete the `*` from '**Resource**', and add the code block underneath this section into the area.
+* Click '**Next**', '**Review**', provide a name and description, and click '**Create Policy**'.
+* Go to '**User Groups**', '**Find New Group**', '**Permissions**', '**Add Permissions**', '**Attach Policies**', find the policy you created, and click '**Add Permissions**'.
+* Go to '**Users**', provide a name, and tick the checkbox beside '**Access key - Programmatic access**'.
+* Click '**Next**', select the group you created in step 1, and click through to the end.
+* Finally, click '**Create User**', and download the CSV file, which will contain your `AWS_SECRET_ACCESS_KEY` and your `AWS_ACCESS_KEY_ID`. This is the only time that this CSV file will be available, so it's very important to download it at this stage.
+
+```python
+"Resource": [
+    "{YOUR ARN}",
+    "{YOUR ARN}/*"
+]
+```
+#### Final AWS Steps:
+* Navigate to S3, you'll see that you have a '**static**' folder with all your static files in it.
+* Create a '**media**' file in your S3 Bucket, click '**Upload**'.
+* Click '**Add Files**', then add all your product images.
+* Under '**Manage Public Permissions**', select '**Grant Public Read Access**'.
+* Then click '**Upload**'.
+* Finally, attempt to log in to the site using the superuser details, then access the '**admin**' panel on the live site, go to '**Email Addresses**', and select Primary and Verified on the superuser email address.
+
+### How to Fork it
+
+1. Login or Sign Up to [GitHub](www.github.com).
+2. On GitHub, go to [KonstantinaStrantzali/FreshNow-food-corner](https://github.com/KonstantinaStrantzali/FreshNow-food-corner).
+3. In the top right, click "Fork".
+
+### Making a Local Clone
+
+   1. Log in to the [GitHub Repository](https://github.com/KonstantinaStrantzali/FreshNow-food-corner).
+2. Click "Code" above the list of files, where you can Clone or Download the repository.
+3. To clone using HTTPS click the clipboard symbol under "Clone with HTTPS".
+4. Open Git Bash.
+6. Current working directory needs to be changed to the new location, where you want the cloned directory to be.
+7. Type `git clone`, and then paste the URL copied in Step 3.
+8. Press Enter, to creat the local clone.
+
+
+[Back to Top](#)
+
+---
+
+## **Testing And Project Barrier Solutions**
+
+All testing and project barriers and solutions has been documented here - [TESTING.md](https://github.com/KonstantinaStrantzali/FreshNow-food-corner/blob/master/TESTING.md)
+
+[Back to Top](#)
+
+---
+
+
