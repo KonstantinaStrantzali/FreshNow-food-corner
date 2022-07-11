@@ -178,7 +178,7 @@ Although the project relied on the wireframes below, there are some differences 
 * Register/Sign In
 * Sign Out
 * Email Verification
-  * ![Register, Sign In, Sign Out, Verify Email](/freshNow_store/documentation/screenshots/register-account.png)
+  * ![Verify Email](/freshNow_store/documentation/screenshots/register-account.png)
 
 * Wishlist (for the logged in user)
   * Add or remove items from the Wishlist
