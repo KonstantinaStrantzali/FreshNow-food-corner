@@ -53,8 +53,6 @@ FreshNow is a full-stack site based around a business logic used to control a ce
 
 [Credits](#credits)
 * [Code](#code)
-* [Content](#content)
-* [Media](#media)
 * [Acknowledgements](#acknowledgements)
 
 ---
@@ -99,8 +97,8 @@ FreshNow is a full-stack site based around a business logic used to control a ce
 
 ### Typography
 
-* The website uses two fonts from [Google Fonts](https://fonts.google.com/?query=Suwannaphum).
-  [....]
+* The website uses a font from [Google Fonts](https://fonts.google.com/) called 
+  _Open Sans_ and is used for all the content, buttons and headings. This font was chosen to be clear and inviting even for customers with poor vision as if they can’t read the menu, they aren’t likely to become regular customers. 
 
 ### Imagery
 
@@ -110,20 +108,20 @@ FreshNow is a full-stack site based around a business logic used to control a ce
 * The About Us page image was taken from Usplash and aims to give the user intuitive information about the restaurant. 
 
 ### Wireframes
-Although the project relied on the wireframes below, there are some differences between the them and the final wedsite due to change of mind for different/better UI and functionality. The wireframes show the desktop, mobile and tablet for view for this project:
+Although the project relied on the wireframes below, there are some differences between the them and the final wedsite due to change of mind for different/better UI and functionality. The wireframes show desktop mobile and tablet view size.
 
-* [Home](documentation/wireframes/home.png)
-* [About Us](documentation/wireframes/our_story.png)---
-* [Sign Up](documentation/wireframes/register-wireframe.png)
-* [Log In](documentation/wireframes/signin-wireframe.png)
-* [My Profile](documentation/wireframes/profile.png)----
-* [Wishlist](documentation/wireframes/wishlist-wireframe.png)
-* [Products Detail](documentation/wireframes/product-details-wireframe.png)
-* [Product and Reviews](documentation/wireframes/product_and_reviews.png)----
-* [Shopping Cart](documentation/wireframes/shopping-bag-wireframe.png)
-* [Checkout](documentation/wireframes/checkout-wireframes.png)
-* [Order Success](documentation/wireframes/order_success.png)---
-* [Add Products](documentation/wireframes/add_product.png)---
+* [Home](freshNow_store/documentation/wireframes/home.png)
+* [About Us](freshNow_store/documentation/wireframes/our_story.png)---
+* [Sign Up](freshNow_store/documentation/wireframes/register-wireframe.png)
+* [Log In](freshNow_store/documentation/wireframes/signin-wireframe.png)
+* [My Profile](freshNow_store/documentation/wireframes/profile.png)----
+* [Wishlist](freshNow_store/documentation/wireframes/wishlist-wireframe.png)
+* [Products Detail](freshNow_store/documentation/wireframes/product-details-wireframe.png)
+* [Product and Reviews](freshNow_store/documentation/wireframes/product_and_reviews.png)----
+* [Shopping Bag](freshNow_store/documentation/wireframes/shopping-bag-wireframe.png)
+* [Checkout](freshNow_store/documentation/wireframes/checkout-wireframes.png)
+* [Order Success](freshNow_store/documentation/wireframes/order_success.png)---
+* [Add Products](freshNow_store/documentation/wireframes/add_product.png)---
 
 ## Features
 
@@ -209,10 +207,14 @@ Although the project relied on the wireframes below, there are some differences 
 
 ### Future Features
 
-[.....]
-* Contact Page
+- A chat bot where users can ask questions on the site.
+- The ability for a registered user to delete their account. 
+- The ability for a registered user to delete their reviews. 
+- Contact Page
+- The ability for the owner to add more meal Categories. 
 
-[Back to Top](#la-fraschetta)
+
+[Back to Top](#)
 
 ## **Information Architecture**
 
@@ -526,3 +528,20 @@ All testing and project barriers and solutions has been documented here - [TESTI
 ---
 
 
+## **Credits**
+
+### Code
+
+* A large amount of code came from the Code Institute, Boutique Ado Mini Project Walkthrough by Chris Zielinski.
+* The core functionality of FreshNow all  taken from the Boutique Ado project. 
+* Django Documentation. 
+* Stackoverflow for help figuring out django error codes, and searching for bug fixes.
+* Python Package Index for customizing a country list django-countries.
+
+### Acknowledgements
+
+A heartfelt thank you to:
+* My mentor Ronan for his helpful advices, support and inspiration helped me deal with hard times and keep my motivation. 
+* Code Institute tutors for their assistance. 
+* My family, the sweet thought of them keeps me always focused and determined to achieve my goals.
+* To Stef for all his jokes, support, comfort and love that helped me overcome the feelings of imposter syndrome.
