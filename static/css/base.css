@@ -385,3 +385,21 @@ transform: rotate(30deg);
 .signout {
     width: 10%;
 }
+
+/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+
+.btt-button {
+  
+    position: sticky;
+    z-index: 9999;
+    font-size: 30px;
+}
+.btt-link {
+    cursor: pointer;
+    color:#E92500;
+}
+.btt-link:hover {
+    cursor: pointer;
+    color:#E92500;
+}
+
