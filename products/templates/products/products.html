@@ -32,10 +32,6 @@
                         high)</option>
                     <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high
                         to low)</option>
-                    <option value="rating_asc" {% if current_sorting == 'review_asc' %}selected{% endif %}>Ratings (low
-                        to high)</option>
-                    <option value="rating_desc" {% if current_sorting == 'review_desc' %}selected{% endif %}>Ratings
-                        (high to low)</option>
                     <option value="calories_asc" {% if current_sorting == 'calories_asc' %}selected{% endif %}>Calories
                         (low-high)</option>
                     <option value="calories_desc" {% if current_sorting == 'calories_desc' %}selected{% endif %}>
@@ -61,8 +57,8 @@
                             <div class="card-body text-dark">
                                 <h5 class="card-title">{{ product.name }} </h5>
                                 <p class="card-price fs-4">£{{ product.price }} </p>
-                                <p class=""> <i class="fa-solid fa-weight-scale me-2"></i>{{ product.calories }} Cal
-                                </p>
+                                <p class=""> <i class="fa-solid fa-weight-scale me-2"></i>{{ product.calories }} Cal</p>
+
                                 <div class="text-center">
                                     {% if request.user.is_superuser %}
                                     <div>

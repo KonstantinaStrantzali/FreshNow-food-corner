@@ -40,14 +40,14 @@ Home
             {% if c.image %}
             <a href="{% url 'products' %}?category={{ c.name }}">
                 <img src="{{ c.image.url }}" alt="{{ c.friendly_name }}" class="img-responsive" height="170">
-                <h5 class="categories-name pt-3 mb-0 pb-0">
+                <h5 class="text-dark pt-3 mb-0 pb-0 fw-bold">
                     {{ c.friendly_name }}
                 </h5>
             </a>
             {% else %}
             <a href="{% url 'products' %}?category={{ c.name }}">
                 <img src="{{ MEDIA_URL }}noimage.png" alt="{{ c.friendly_name }}" class="img-responsive" height="160">
-                <h5 class="pt-3 mb-0 pb-0 green">
+                <h5 class="pt-3 text-dark mb-0 pb-0 ">
                     {{ c.friendly_name }}
                 </h5>
             </a>

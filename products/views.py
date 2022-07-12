@@ -200,8 +200,7 @@ def add_review(request, product_id):
                 review.product = product
                 review.profile_user = user
                 review.save()
-                messages.success(request, 'Your review was successful')
-                print(review.rating)
+                messages.info(request, 'Your review was successful')
                 return redirect(reverse('product_detail', args=[product.id]))
             else:
                 messages.error(
