@@ -12,6 +12,8 @@
 
 [Code Validation](#code-validation)
 
+[Responsiveness And Compatibility](#responsiveness-and-compatibility)
+
 [Testing Performance](#testing-performance)
 * [Lighthouse](#lighthouse)
 
@@ -173,6 +175,32 @@ Alot of the Python errors were fixed during development. Some of them were auto 
 
 [Back to Top](#testing-and-project-barrier-solutions)
 
+
+
+## **Responsiveness And Compatibility**
+
+Responsiveness tested  across different screen sizes and browsers. More specifically, Dev Tools used to emulate the following devices:
+
+**Mobile Devices**
+- Galaxy S5
+- Galaxy S9
+- iPhone 5/SE
+- iPhone 6/7/8
+- iPhone 6/7/8 plus
+- iPhone X / XS
+
+
+**Tablet Devices**
+- iPad
+- iPad Pro
+
+**Browsers**
+- Google Chrome
+- Mozilla Firefox
+   
+ 
+
+[Back to Top](#testing-and-project-barrier-solutions)
 
 ## **Testing Performance**
 
