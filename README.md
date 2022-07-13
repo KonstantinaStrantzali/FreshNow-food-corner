@@ -111,16 +111,15 @@ FreshNow is a full-stack site based around a business logic used to control a ce
 Although the project relied on the wireframes below, there are some differences between the them and the final wedsite due to change of mind for different/better UI and functionality. The wireframes show desktop mobile and tablet view size.
 
 * [Home](freshNow_store/documentation/wireframes/home.png)
-* [About Us](freshNow_store/documentation/wireframes/our_story.png)---
+* [About Us]((freshNow_store/documentation/wireframes/about-us-wireframe.png)
 * [Sign Up](freshNow_store/documentation/wireframes/register-wireframe.png)
 * [Log In](freshNow_store/documentation/wireframes/signin-wireframe.png)
-* [My Profile](freshNow_store/documentation/wireframes/profile.png)----
+* [My Profile](freshNow_store/documentation/wireframes/profile-wireframe.png)
 * [Wishlist](freshNow_store/documentation/wireframes/wishlist-wireframe.png)
 * [Products Detail](freshNow_store/documentation/wireframes/product-details-wireframe.png)
-* [Product and Reviews](freshNow_store/documentation/wireframes/product_and_reviews.png)----
 * [Shopping Bag](freshNow_store/documentation/wireframes/shopping-bag-wireframe.png)
 * [Checkout](freshNow_store/documentation/wireframes/checkout-wireframes.png)
-* [Order Success](freshNow_store/documentation/wireframes/order_success.png)---
+* [Order Success](freshNow_store/documentation/wireframes/checkout-success-wireframe.png)
 * [Add Products](freshNow_store/documentation/wireframes/add_product.png)---
 
 ## Features
@@ -143,7 +142,6 @@ Although the project relied on the wireframes below, there are some differences 
   * Sort the List of Products by:
     * _Calories_ (low - high / high - low)
     * _Price_ (low - high / high - low)
-    * _Ratings_ (low - high / high - low)
     * ![Sort By Name In Category](/freshNow_store/documentation/screenshots/sort.png)
 
 * Search Bar
@@ -200,7 +198,7 @@ Although the project relied on the wireframes below, there are some differences 
 
 * 404 Page Not Found
 * 500 Internal Server Error
-  * ![404 Page Not Found](documentation/screenshots/iphone375/error404.png)
+  * ![404 Page Not Found](/freshNow_store/documentation/screenshots/404.page.png)
 
 ---
 
