@@ -194,8 +194,8 @@ Although the project relied on the wireframes below, there are some differences 
 
 
 * Store owner has the ability to add / edit and delete Products
-  * ![Update, Delete](documentation/screenshots/update-delete-product.png)
-  * ![Add Product](documentation/screenshots/add-product.png)
+  * ![Update, Delete](/freshNow_store/documentation/screenshots/update-delete-product.png)
+  * ![Add Product](/freshNow_store/documentation/screenshots/add-product.png)
 
 
 * 404 Page Not Found
