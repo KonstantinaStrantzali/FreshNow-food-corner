@@ -376,7 +376,7 @@ transform: rotate(30deg);
    background-color: #E92500;
 }
 
-.form-area {
+#form-area {
     display: grid;
     grid-template-rows: auto 2fr auto;
     min-height: 100vh;

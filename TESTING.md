@@ -12,8 +12,6 @@
 
 [Code Validation](#code-validation)
 
-[Responsiveness And Compatibility](#responsiveness-and-compatibility)
-
 [Testing Performance](#testing-performance)
 * [Lighthouse](#lighthouse)
 
@@ -22,6 +20,7 @@
 * [Known Bugs](#known-bugs)
 
 ---
+## **Testing User Stories**
 
 ### Regular Site User Stories
 
@@ -173,3 +172,27 @@ Alot of the Python errors were fixed during development. Some of them were auto 
             * ![Flake8](/freshNow_store/documentation/validation/flake8.png)
 
 [Back to Top](#testing-and-project-barrier-solutions)
+
+
+## **Testing Performance**
+
+### Lighthouse
+
+
+## **Project Barriers and Solutions**
+
+### Solved Bugs
+
+1. Logout page in django-allauth didn't comply with the rest basic layout of the project and the footer couldn't stick on the bottom of the page. Thus I set an unique id to the form element of logout page, which eventually pushed the footer on the bottom.
+
+2. When I switched my GitHub database to Heroku PostgreSQL some of my images couldn't render on HTML. I quickly realised that Heroku MEDIA_URL contained the Amazon Website Services URL instead of the link of my local directory and thus I had to changed the src path to `{{ MEDIA_URL}}image.png`.
+![Bug](/freshNow_store/documentation/screenshots/images-bug.jpg)
+
+3. While I was creating my reviews for my product, migrated the relevant models in my database and called the corresponding `Reviews.objects.all().filter(product=product)` in my product_detail function, so I could be able to render each review for each product on my HTML but I didn't get the expected result and the review values were empty. Thus I had to map a relationship between product and reviews either by adding the related_name field or by adding a syntax to access the default related_name: `product.reviews_set.all`. 
+
+![Bug](/freshNow_store/documentation/screenshots/bug-reviews.jpg)
+
+4. Before my project submission Heroku run some database maintenance and rotated my credentials in Gitpod so I wasnt able to open my page in the Browser after running the server in my terminal.
+Thus, I had get the new database credentials from my Heroku account and update the DATABASE_URL in my Gitpod environment variables with the new postgres URI. Once I put the new DATABASE_URL in my Gitpod environment I had to stop and restart the workplace.  
+
+![Heroku](/freshNow_store/documentation/screenshots/heroku.png)
