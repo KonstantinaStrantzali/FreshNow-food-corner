@@ -226,7 +226,7 @@ def edit_review(request, review_id):
         form = ReviewForm(request.POST, instance=review)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Review has been changed')
+            messages.success(request, 'Review has been updated')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(
