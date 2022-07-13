@@ -3,7 +3,10 @@
 
 :root{
     --main-color: white;
-    --btn-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+html {
+    height: 100%;
+    scroll-behavior: smooth;   
 }
 
 .navigation-links a:hover
@@ -11,34 +14,24 @@
     padding: 0;
     border-bottom: 2px solid var(--main-color);
 }
+
 .navbar-toggler{
-    background-color:white; 
+    background-color: var(--main-color); 
 }
 .navbar-toggler-icon{
     color:#E92500 !important;
 }
-
-html {
- 
-    height: 100%;
-    scroll-behavior: smooth;
-    
-}
-
-
 
 .body-area{
 
     background-color: rgb(27, 26, 26);
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
-    color:white;
+    color: var(--main-color);
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
-    margin: 0;
-   
- 
+    margin: 0;  
   
 }
 .welcome-heading {
@@ -73,7 +66,7 @@ html {
     margin-left: 5%;
     color:azure;
 }
-
+/* -------------------------------------------- footer */
 .social-media-section{
     background-color: rgba(0, 0, 0, 0.486);
   }
@@ -104,7 +97,7 @@ html {
 .order-button,
 .product-button{
     background-color: #E92500;
-    color:white;
+    color:var(--main-color);
 }
 
 .red-background{
@@ -259,44 +252,7 @@ border: 5px solid #EEE; }
     margin-left: 25%;
 }
 
-
-
-/* fixed top navbar only on medium and up */
-@media (min-width: 992px) {
-    .fixed-top-desktop-only {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
-    }
-
-    .header-container {
-        padding-top: 164px;
-    }
-    .heart-icon{
-        font-size: 30px;
-        color: #E92500;
-    }
-}
-
-
-
-@media (max-width: 768px) {
-    .hero-container {
-
-        height: 45vh;
-}
-.header-container{
-    margin-top: 25%;
-}
-.moving-text{
-   
-    margin-top: 17%
-}
-
-}
-
+/* Forms */
 .form-user{
     color:white;
 }
@@ -316,8 +272,12 @@ border: 5px solid #EEE; }
     font-size: 1.4rem;
 }
 
+.delivery-content {
+    color: red;
+}
 
-.signin-link{
+.signin-link,
+.delivery-content {
     color: red;
     text-decoration: None;
 }
@@ -386,7 +346,6 @@ transform: rotate(30deg);
     width: 10%;
 }
 
-/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
 
 .btt-button {
   
@@ -402,4 +361,45 @@ transform: rotate(30deg);
     cursor: pointer;
     color:#E92500;
 }
+
+
+/* media queries */
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
+    .heart-icon{
+        font-size: 30px;
+        color: #E92500;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .hero-container {
+
+        height: 45vh;
+}
+.header-container{
+    margin-top: 25%;
+}
+.moving-text{
+   
+    margin-top: 17%
+}
+
+}
+
+
 
