@@ -219,7 +219,6 @@ def edit_review(request, review_id):
     """
 
     review = get_object_or_404(Reviews, pk=review_id)
-    print(review)
     product = review.product
 
     if request.method == 'POST':
