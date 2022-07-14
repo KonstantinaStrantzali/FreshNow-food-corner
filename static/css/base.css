@@ -7,7 +7,8 @@
 html {
     height: 100%;
     margin:0;
-    scroll-behavior: smooth;   
+    scroll-behavior: smooth;  
+    overflow-x: hidden; 
 }
 
 .navigation-links a:hover
@@ -50,6 +51,7 @@ html {
 .review-container{
     background-color: #E92500;
     color: white;
+    width: 60%;
 }
 
 .hero-container {
@@ -420,6 +422,7 @@ transform: rotate(30deg);
 .quantity-control{
   width: 60% !important;
 }
+
 
 }
 

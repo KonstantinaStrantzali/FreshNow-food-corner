@@ -112,7 +112,7 @@ Admin is able to add, edit and delete any product.
 ### W3C Markup Validation Service:
 * The HTML for this site was validated by running each page through the [W3C HTML Markup Validator](https://validator.w3.org/) and returned no errors.
     * Home
-        * ![Home](documentation/screenshots/w3c-html/home.png)
+        * ![Home](/freshNow_store/documentation/validation/home-validation.png)
     * Our Story
         * ![About Us](/freshNow_store/documentation/validation/aboutUs_validation.png)
     * Products
@@ -205,6 +205,18 @@ Responsiveness tested  across different screen sizes and browsers. More specific
 ## **Testing Performance**
 
 ### Lighthouse
+
+* Google Lighthouse was run on different pages returning different results. Below is an extract of the reports for the 'Home' page, 'Product Details' and 'Wishlist'
+
+* Home
+        * ![Home](/freshNow_store/documentation/validation/lighthouse-home.png)
+
+* Product Detail
+        * ![Product Detail](/freshNow_store/documentation/validation/lighthouse-2.png)
+
+* Wishlist
+        * ![Product Detail](/freshNow_store/documentation/validation/wishlisti-lighthouse.png)
+
 
 
 ## **Project Barriers and Solutions**
