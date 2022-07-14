@@ -236,3 +236,5 @@ Responsiveness tested  across different screen sizes and browsers. More specific
 Thus, I had get the new database credentials from my Heroku account and update the DATABASE_URL in my Gitpod environment variables with the new postgres URI. Once I put the new DATABASE_URL in my Gitpod environment I had to stop and restart the workplace.  
 
 ![Heroku](/freshNow_store/documentation/screenshots/heroku.png)
+
+## Known Bugs

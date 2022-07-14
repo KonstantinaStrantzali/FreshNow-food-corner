@@ -93,7 +93,7 @@ FreshNow is a full-stack site based around a business logic used to control a ce
 ## **Design**
 
 ### Colour Scheme
-* The website uses the colours found...
+* The website uses 3 basic colors colours found...
   * [Colour Palette - Coolers.co](https://coolors.co/0f5520-fffaea-990b16-6c9c79)
   ![Colour Palette](/freshNow_store/documentation/FreshNow%20Color%20Palette.png)
 
