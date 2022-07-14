@@ -18,6 +18,12 @@ Welcome to FreshNow store, an e-commerce site was built to fill the requirements
 This is a fully responsive website, developed by utilising the principles of UX design and using HTML, CSS, Bootstrap, JavaScript, jQuery, Python, Django technologies as well as  SQL database through Heroku PostgreSQL and Stripe online test payments.
 FreshNow is a full-stack site based around a business logic used to control a centrally-owned dataset and accepts purchases via Stripe test card details. For further details on cards numbers click [here](https://stripe.com/docs/testing#cards).
 
+To login as superuser:
+username : admin
+password: 123456
+
+
+
 ## **Contents**
 
 * [User Experience (UX)](#user-experience-ux)
