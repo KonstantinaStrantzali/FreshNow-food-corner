@@ -10,7 +10,7 @@ html {
     scroll-behavior: smooth;  
     overflow-x: hidden; 
 }
-
+/* Navigation Bar */
 .navigation-links a:hover
 {
     padding: 0;
@@ -24,8 +24,33 @@ html {
     color:#E92500 !important;
 }
 
+.navbar{
+    background-color:#E92500;
+    font-size: 20px;
+    align-items: center;
+   
+}
+
+.top-nav{
+    background-color: rgba(0, 0, 0, 0.486);
+}
+#nav ul {
+    display: inline-block;
+    list-style-type: none;
+    }
+
+.logo { 
+   
+    width: 70px;
+    height: 72px;
+    position: fixed;
+    top:0; 
+	left:0;     
+}
+
+
 .animate__heartBeat {
-    animation-duration: 3s;
+    animation-duration: 5s;
 }
 
 .body-area{
@@ -98,9 +123,7 @@ html {
   }
 
 
-.top-nav{
-    background-color: rgba(0, 0, 0, 0.486);
-}
+
 .order-button,
 .product-button{
     background-color: #E92500;
@@ -153,45 +176,17 @@ border: 5px solid #EEE; }
 }
 
 
-.navbar{
-    background-color:#E92500;
-    font-size: 20px;
-    align-items: center;
-   
-}
-
-#nav ul {
-    display: inline-block;
-    list-style-type: none;
-    }
-
-.logo { 
-   
-    width: 70px;
-    height: 72px;
-    position: fixed;
-    top:0; 
-	left:0;     
-}
-
 .hero-area{
     color:white;
     margin-top:5%;
 }
 
-.moving-text{
-    font-size: 20px;
-    color:white;
-    margin-top: 13%
-}
 /* Cards */
 
 .card-price{
     margin-bottom: 5px;
 
 }
-
-
 /* from Bulma */
 .icon {
     align-items: center;
@@ -371,8 +366,6 @@ transform: rotate(30deg);
 
 
 /* media queries */
-
-/* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;
@@ -405,6 +398,9 @@ transform: rotate(30deg);
 
     font-size: 12px; 
     margin-top: 23%;
+    font-size: 20px;
+    color:white;
+    margin-top: 13%
 }
 
 .review-container{

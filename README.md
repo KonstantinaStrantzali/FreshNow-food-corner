@@ -214,7 +214,7 @@ Although the project relied on the wireframes below, there are some differences 
 - The ability for the owner to add more meal Categories. 
 
 
-[Back to Top](#)
+[Back to Top](#contents)
 
 ## **Information Architecture**
 
@@ -243,7 +243,7 @@ The navigation bar changes depending on user status and screen size:
 The diagram below illustrates the database structure used in this project.
 ![Database Schema](freshNow_store/documentation/database.png)
 
-[Back to Top](#)
+[Back to Top](#contents)
 
 ---
 
@@ -327,7 +327,7 @@ stripe==3.4.0
 * [PEP8](http://pep8online.com/) was used to validate the python syntax.
 
 
-[Back to Top](#la-fraschetta)
+[Back to Top](#contents)
 
 ---
 
@@ -516,7 +516,7 @@ stripe==3.4.0
 8. Press Enter, to creat the local clone.
 
 
-[Back to Top](#)
+[Back to Top](#contents)
 
 ---
 
@@ -524,7 +524,7 @@ stripe==3.4.0
 
 All testing and project barriers and solutions has been documented here - [TESTING.md](https://github.com/KonstantinaStrantzali/FreshNow-food-corner/blob/master/TESTING.md)
 
-[Back to Top](#)
+[Back to Top](#contents)
 
 ---
 
@@ -536,8 +536,8 @@ All testing and project barriers and solutions has been documented here - [TESTI
 * A large amount of code came from the Code Institute, Boutique Ado Mini Project Walkthrough by Chris Zielinski.
 * The core functionality of FreshNow all  taken from the Boutique Ado project. 
 * Django Documentation. 
-* Stackoverflow for help figuring out django error codes, and searching for bug fixes.
-* Python Package Index for customizing a country list django-countries.
+* Stackoverflow for looking up any question about django error codes and bug fixes.
+* Django-countries PyPI.
 
 ### Acknowledgements
 

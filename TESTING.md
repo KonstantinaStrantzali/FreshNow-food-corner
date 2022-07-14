@@ -238,3 +238,6 @@ Thus, I had get the new database credentials from my Heroku account and update t
 ![Heroku](/freshNow_store/documentation/screenshots/heroku.png)
 
 ## Known Bugs
+
+* In product_details page the content layout works as expected, but for some specific products the page appears a little gap between the page and the navbar.
+* In product_details page the Validation of HTML initially completed without getting any errors back but after some users added reviews and therefore new data rendered in the page, the HTML structure appears with a stray div and this affects only the mobile screen view. 
