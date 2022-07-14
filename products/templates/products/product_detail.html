@@ -108,7 +108,7 @@
                                 </div>
                             </div>
                         </div>
-
+                    
                         <div class="col-12">
                             <a href="{% url 'products' %}" class="btn btn-outline-dark mt-5">
                                 <span class="icon">
@@ -124,7 +124,7 @@
             </div>
         </div>
     </div>
-</div>
+
 
 <div id="reviews" class="row">
     <div class="col-12 col-md-10 col-lg-4 offset-lg-4 mt-5 text-left">
@@ -220,8 +220,8 @@
                         </p>
                         {% endif %}
                     </div>
-                    <p class="text-light">{{ review.review }}</p>
-                    <p class="small text-light"> by {{ review.profile_user}} on
+                    <p class="text-light p-1">{{ review.review }}</p>
+                    <p class="small p-1 text-light"> by {{ review.profile_user}} on
                         {{ review.created_date|date:"d-m-Y"}}
                     </p>
                     {% if review.profile_user == request.user or request.user.is_superuser %}
@@ -232,7 +232,7 @@
                     </div>
                 {% endif %}
                  </div>   
-                </div>
+               </div>
            
         {% empty %}
             <div class="text-center mt-5">

@@ -93,7 +93,7 @@ FreshNow is a full-stack site based around a business logic used to control a ce
 ## **Design**
 
 ### Colour Scheme
-* The website uses 3 basic colors colours found...
+* Bright shade of Red (#E92500) was picked as a main color for this site, which creates a sense of urgency and captures attention as well as urges visitors to make quick decisions.Black and white colors picked to balance out the bright attractive red and make the written and pictorial content pop.
   * [Colour Palette - Coolers.co](https://coolors.co/0f5520-fffaea-990b16-6c9c79)
   ![Colour Palette](/freshNow_store/documentation/FreshNow%20Color%20Palette.png)
 
