@@ -542,7 +542,7 @@ All testing and project barriers and solutions has been documented here - [TESTI
 ### Acknowledgements
 
 A heartfelt thank you to:
-* My mentor Ronan for his helpful advices, support and inspiration that helped me deal with hard times and keep my motivation. 
+* My mentor Ronan for his helpful advices, support and inspiration that helped me deal with hard times and stayed motivated. 
 * Code Institute tutors for their assistance. 
 * My family, the sweet thought of them keeps me always focused and determined to achieve my goals.
 * To Stef for all his jokes, support, comfort and love that helped me overcome the feelings of imposter syndrome.
