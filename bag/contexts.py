@@ -6,6 +6,10 @@ from products.models import Product
 
 def bag_contents(request):
 
+    """
+    Return shopping bag information into a dictionary
+    """
+
     bag_items = []
     total = 0
     product_count = 0

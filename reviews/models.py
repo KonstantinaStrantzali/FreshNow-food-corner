@@ -4,6 +4,10 @@ from products.models import Product
 
 
 class Reviews(models.Model):
+
+    """
+    Stores review details in the database
+    """
     RATING = [
         (1, '1'),
         (2, '2'),

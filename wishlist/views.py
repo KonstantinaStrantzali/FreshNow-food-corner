@@ -26,6 +26,10 @@ def wishlist(request):
 
 @login_required
 def add_to_wishlist(request, product_id):
+
+    """
+    Add a product in your wishlist
+    """
     user = get_object_or_404(UserProfile, user=request.user)
     product = get_object_or_404(Product, pk=product_id)
 
@@ -42,6 +46,9 @@ def add_to_wishlist(request, product_id):
 @login_required
 def delete_wishlist_item(request, product_id):
 
+    """
+    Delete users wishlist item
+    """
     user = get_object_or_404(UserProfile, user=request.user)
 
     product = get_object_or_404(Product, pk=product_id)
@@ -52,4 +59,3 @@ def delete_wishlist_item(request, product_id):
                   f'{product.name} has been removed from your Wishlist!')
 
     return redirect(reverse('product_detail', args=[product.id]))
-
