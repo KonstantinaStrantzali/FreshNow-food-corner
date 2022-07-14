@@ -108,7 +108,7 @@
                                 </div>
                             </div>
                         </div>
-                    
+
                         <div class="col-12">
                             <a href="{% url 'products' %}" class="btn btn-outline-dark mt-5">
                                 <span class="icon">
@@ -124,6 +124,7 @@
             </div>
         </div>
     </div>
+</div>
 
 
 <div id="reviews" class="row">
@@ -154,91 +155,91 @@
         {% endif %}
     </div>
 </div>
-        <!-- Showing all product reviews-->
-        {% for review in product.reviews_set.all %}
-            <div class="card review-container mx-5 my-2">
-                <!-- Edit Review Button-->
-               
-                <div class="card-body review-body">
-                    {% if review.rating == 5 %}
-                        <p>
-                            <small class="text-warning">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+<!-- Showing all product reviews-->
+{% for review in product.reviews_set.all %}
+<div class="card review-container mx-5 my-2">
+    <!-- Edit Review Button-->
 
-                            </small>
-                        </p>
+    <div class="card-body review-body">
+        {% if review.rating == 5 %}
+        <p>
+            <small class="text-warning">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
 
-                        {% elif review.rating == 4 %}
-                        <p>
-                            <small class="text-warning">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </small>
-                        </p>
-                        {% elif review.rating == 3 %}
-                        <p>
-                            <small class="text-warning">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </small>
-                        </p>
-                        {% elif review.rating == 2 %}
-                        <p>
-                            <small class="text-warning">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </small>
-                        </p>
-                        {% elif review.rating == 1 %}
-                        <p>
-                            <small class="text-warning">
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </small>
-                        </p>
-                        {% else %}
-                        <p>
-                            <small class="text-light">
-                                No Reviews
-                            </small>
-                        </p>
-                        {% endif %}
-                    </div>
-                    <p class="text-light p-1">{{ review.review }}</p>
-                    <p class="small p-1 text-light"> by {{ review.profile_user}} on
-                        {{ review.created_date|date:"d-m-Y"}}
-                    </p>
-                    {% if review.profile_user == request.user or request.user.is_superuser %}
-                    <div class="text-center">
-                    <a class="text-left btn btn-light" href="{% url 'edit_review' review.id %}#reviews">
-                        Edit Review
-                    </a>
-                    </div>
-                {% endif %}
-                 </div>   
-               </div>
-           
-        {% empty %}
-            <div class="text-center mt-5">
-                <p>No reviews for this product, you can be the first...</p>
-            </div>
-        {% endfor%}
+            </small>
+        </p>
+
+        {% elif review.rating == 4 %}
+        <p>
+            <small class="text-warning">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+            </small>
+        </p>
+        {% elif review.rating == 3 %}
+        <p>
+            <small class="text-warning">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+            </small>
+        </p>
+        {% elif review.rating == 2 %}
+        <p>
+            <small class="text-warning">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+            </small>
+        </p>
+        {% elif review.rating == 1 %}
+        <p>
+            <small class="text-warning">
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+            </small>
+        </p>
+        {% else %}
+        <p>
+            <small class="text-light">
+                No Reviews
+            </small>
+        </p>
+        {% endif %}
+    </div>
+    <p class="text-light p-1">{{ review.review }}</p>
+    <p class="small p-1 text-light"> by {{ review.profile_user}} on
+        {{ review.created_date|date:"d-m-Y"}}
+    </p>
+    {% if review.profile_user == request.user or request.user.is_superuser %}
+    <div class="text-center">
+        <a class="text-left btn btn-light" href="{% url 'edit_review' review.id %}#reviews">
+            Edit Review
+        </a>
+    </div>
+    {% endif %}
+</div>
+</div>
+
+{% empty %}
+<div class="text-center mt-5">
+    <p>No reviews for this product, you can be the first...</p>
+</div>
+{% endfor%}
     
 
 

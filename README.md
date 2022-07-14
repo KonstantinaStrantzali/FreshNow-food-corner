@@ -14,16 +14,16 @@
 
 ## **Introduction**
 
-Welcome to FreshNow store, an e-commerce site was built to fill the requirements of the final project part of my studies on Web Developer Application Diploma. 
+Welcome to FreshNow store, an e-commerce site was built to fill the requirements of the final project part of my studies on Web Development Application Diploma. 
 This is a fully responsive website, developed by utilising the principles of UX design and using HTML, CSS, Bootstrap, JavaScript, jQuery, Python, Django technologies as well as  SQL database through Heroku PostgreSQL and Stripe online test payments.
 FreshNow is a full-stack site based around a business logic used to control a centrally-owned dataset and accepts purchases via Stripe test card details. For further details on cards numbers click [here](https://stripe.com/docs/testing#cards).
 
 ## **Contents**
 
-[User Experience (UX)](#user-experience-ux)
+* [User Experience (UX)](#user-experience-ux)
 * [User Stories](#user-stories)
 
-[Design](#design)
+* [Design](#design)
 * [Colour Scheme](#colour-scheme)
 * [Typography](#typography)
 * [Imagery](#imagery)
@@ -71,7 +71,7 @@ FreshNow is a full-stack site based around a business logic used to control a ce
 * As a shopper, I wish to search for a specific product and category so that I find what I want faster.
 * As a shopper, I wish to be able to sort the products by price and calories so that I find what I want directly without wasting time on searching. 
 * As a shopper, I wish to view products in more detail so I am aware of the full product information.
-* As a shopper,  I wish to get visual feedback so  an action has been completed so that avoid making mistakes while adding, editing and deleting products.
+* As a shopper,  I wish to get visual feedback when  an action has been completed so that avoid making mistakes while adding, editing and deleting products.
 * As a shopper, I wish to easily add, update or delete items in my bag where I can view a summary of my orders along with the total price so that I can stick with my budget.
 * As a shopper, I wish to easily make a payment so that I smoothly complete the checkout. 
 
@@ -110,7 +110,7 @@ FreshNow is a full-stack site based around a business logic used to control a ce
 * The About Us page image was taken from Usplash and aims to give the user intuitive information about the restaurant. 
 
 ### Wireframes
-Although the project relied on the wireframes below, there are some differences between the them and the final wedsite due to change of mind for different/better UI and functionality. The wireframes show desktop mobile and tablet view size.
+Although the project relied on the wireframes below, there are some differences and pages additions between them and the final wedsite due to change of mind for different/better UI and functionality. The wireframes show desktop mobile and tablet view size.
 
 * [Home](freshNow_store/documentation/wireframes/home.png)
 * [About Us](freshNow_store/documentation/wireframes/about-us-wireframe.png)
@@ -122,7 +122,7 @@ Although the project relied on the wireframes below, there are some differences 
 * [Shopping Bag](freshNow_store/documentation/wireframes/shopping-bag-wireframe.png)
 * [Checkout](freshNow_store/documentation/wireframes/checkout-wireframes.png)
 * [Order Success](freshNow_store/documentation/wireframes/checkout-success-wireframe.png)
-* [Add Products](freshNow_store/documentation/wireframes/add_product.png)---
+
 
 ## Features
 
@@ -260,7 +260,7 @@ The diagram below illustrates the database structure used in this project.
 
 * [Font Awesome](https://fontawesome.com/) was used for site's icons.
 * [Coolers.co](https://coolors.co/a71313-3c3cdf-0f0f0f-ffffff-198754-ffca02) was used for the colour palette of the site.
-* [Google Fonts](https://fonts.google.com/) was used to import the _Open Sans_ and _Dancing Script_ font in the site.
+* [Google Fonts](https://fonts.google.com/) was used to import the _Open Sans_ font in the site.
 
 
 ### Hosting
@@ -542,7 +542,7 @@ All testing and project barriers and solutions has been documented here - [TESTI
 ### Acknowledgements
 
 A heartfelt thank you to:
-* My mentor Ronan for his helpful advices, support and inspiration that helped me deal with hard times and stayed motivated. 
+* My mentor Ronan for his helpful advice, support and inspiration that helped me deal with hard times and stayed motivated. 
 * Code Institute tutors for their assistance. 
 * My family, the sweet thought of them keeps me always focused and determined to achieve my goals.
 * To Stef for all his jokes, support, comfort and love that helped me overcome the feelings of imposter syndrome.
