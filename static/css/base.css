@@ -399,7 +399,9 @@ transform: rotate(30deg);
     margin-top: 17%
 }
 
+.quantity-control{
+  width: 60% !important;
 }
 
-
+}
 

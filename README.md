@@ -31,10 +31,10 @@ FreshNow is a full-stack site based around a business logic used to control a ce
 * [Features](#features)
 * [Future Features](#future-features)
 
-[Information Architecture](#information-architecture)
+* [Information Architecture](#information-architecture)
 * [Database Design](#database-design)
 
-[Technologies Used](#technologies-used)
+* [Technologies Used](#technologies-used)
 * [Languages Used](#languages-used)
 * [Site Design](#site-design)
 * [Hosting](#hosting)
@@ -43,20 +43,22 @@ FreshNow is a full-stack site based around a business logic used to control a ce
 * [Other Technologies](#other-technologies)
 * [Testing](#testing)
 
-[Deployment](#deployment)
+* [Deployment](#deployment)
 * [Requirements for Deployment](#requirements-for-deployment)
 * [Initial Deployment](#initial-deployment)
 * [How to Fork it](#how-to-fork-it)
 * [Making a Local Clone](#making-a-local-clone)
 
-[Testing and Project Barrier Solutions](#testing-and-project-barrier-solutions)
+* [Testing and Project Barrier Solutions](#testing-and-project-barrier-solutions)
 
-[Credits](#credits)
+* [Credits](#credits)
 * [Code](#code)
 * [Acknowledgements](#acknowledgements)
 
 ---
 ## **User Experience (UX)**
+
+## User Stories
 
 ### Regular Site User Stories
 * As a site user, I want the main purpose to be clear at first glance so that I can instantly understand if this is the correct site for me.
@@ -111,7 +113,7 @@ FreshNow is a full-stack site based around a business logic used to control a ce
 Although the project relied on the wireframes below, there are some differences between the them and the final wedsite due to change of mind for different/better UI and functionality. The wireframes show desktop mobile and tablet view size.
 
 * [Home](freshNow_store/documentation/wireframes/home.png)
-* [About Us]((freshNow_store/documentation/wireframes/about-us-wireframe.png)
+* [About Us](freshNow_store/documentation/wireframes/about-us-wireframe.png)
 * [Sign Up](freshNow_store/documentation/wireframes/register-wireframe.png)
 * [Log In](freshNow_store/documentation/wireframes/signin-wireframe.png)
 * [My Profile](freshNow_store/documentation/wireframes/profile-wireframe.png)
@@ -344,7 +346,8 @@ stripe==3.4.0
 * Email account
 
 #### The are two stages for the deployment of this projects:
-### 1. Initial Deployment 
+
+### Initial Deployment 
 
 * First step includes Heroku app creation, connection with Postgres database and app deployment without static files.
 
@@ -539,7 +542,7 @@ All testing and project barriers and solutions has been documented here - [TESTI
 ### Acknowledgements
 
 A heartfelt thank you to:
-* My mentor Ronan for his helpful advices, support and inspiration helped me deal with hard times and keep my motivation. 
+* My mentor Ronan for his helpful advices, support and inspiration that helped me deal with hard times and keep my motivation. 
 * Code Institute tutors for their assistance. 
 * My family, the sweet thought of them keeps me always focused and determined to achieve my goals.
 * To Stef for all his jokes, support, comfort and love that helped me overcome the feelings of imposter syndrome.
