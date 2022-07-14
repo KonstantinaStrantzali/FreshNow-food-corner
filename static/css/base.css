@@ -23,6 +23,10 @@ html {
     color:#E92500 !important;
 }
 
+.animate__heartBeat {
+    animation-duration: 12s;
+}
+
 .body-area{
 
     background-color: rgb(27, 26, 26);
@@ -176,7 +180,7 @@ border: 5px solid #EEE; }
 .moving-text{
     font-size: 20px;
     color:white;
-    margin-top: 11%
+    margin-top: 13%
 }
 /* Cards */
 
@@ -396,8 +400,9 @@ transform: rotate(30deg);
     margin-top: 25%;
 }
 .moving-text{
-   
-    margin-top: 22%
+
+    font-size: 12px; 
+    margin-top: 22%;
 }
 
 .review-container{
