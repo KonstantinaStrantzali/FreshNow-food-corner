@@ -80,14 +80,14 @@
                         You could get free delivery by spending just <strong>£{{ free_delivery_delta }}</strong> more!
                     </p>
                     {% endif %}
-                    <a class="btn order-button mt-1" href="{% url 'products' %}">
+                    <a class="btn order-button bag-buttons mt-1" href="{% url 'products' %}">
                         <span class="icon">
                             <i class="fas fa-chevron-left"></i>
                         </span>
-                        <span class="order-button font-weight-bold text-uppercase">Go to meals</span>
+                        <span class="order-button">Go to meals</span>
                     </a>
-                    <a class="btn order-button mt-1" href="{% url 'checkout' %}">
-                        <span class="text-uppercase font-weight-bold text-light">Secure Checkout</span>
+                    <a class="btn order-button bag-buttons mt-1" href="{% url 'checkout' %}">
+                        <span class="text-light">Secure Checkout</span>
                         <span class="icon">
                             <i class="fas fa-lock"></i>
                         </span>
